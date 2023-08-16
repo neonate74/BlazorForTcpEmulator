@@ -1,0 +1,135 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+@implements IAsyncDisposable
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<Counter />
+
+<style>
+    .form-group {
+        margin-bottom: 5px;
+    }
+</style>
+
+<h3 style="margin-top: 10px;">HubChat</h3>
+
+<div class="form-group">
+    <label>
+        Me:
+        <input @bind="myAccount" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        To:
+        <input @bind="userInput" />
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        Message:
+        <input @bind="messageInput" size="50" />
+    </label>
+</div>
+
+<button class="btn btn-primary" @onclick="Send" disabled="@(!IsConnected)">Send</button>
+
+<button class="btn btn-primary" @onclick="Send1" disabled="@(!IsConnected)">Send1</button>
+<hr>
+
+<ul id="messagesList">
+    @foreach (var message in messages)
+    {
+                <li>@message</li>
+    }
+</ul>
+
+
+@code {
+    private HubConnection? hubConnection;
+    private List<string> messages = new List<string>();
+    private string? myAccount;
+    private string? userInput;
+    private string? messageInput;
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder().Build();
+
+        hubConnection.On<string, string, string>("ReceiveMessage", (me, user, message) =>
+        {
+            if (string.IsNullOrEmpty(user) || me == myAccount || user == myAccount)
+            {
+                var encodedMsg = $"{me}: {message}";
+                messages.Add(encodedMsg);
+                InvokeAsync(StateHasChanged);
+            }
+        });
+
+        hubConnection.On<string, string, string>("ReceiveMessage1", (me, user, message) =>
+        {
+            if (string.IsNullOrEmpty(user) || me == myAccount || user == myAccount)
+            {
+                var encodedMsg = $"{me}111: {message}";
+                messages.Add(encodedMsg);
+                InvokeAsync(StateHasChanged);
+            }
+        });
+
+        try
+        {
+            await hubConnection.StartAsync();
+            messages.Add("Connection started");
+        }
+        catch (Exception ex)
+        {
+            messages.Add(ex.Message);
+        }
+    }
+
+    private async Task Send()
+    {
+        try
+        {
+            if (hubConnection is not null)
+            {
+                await hubConnection.SendAsync("SendMessage", myAccount, userInput, messageInput);
+            }
+        }
+        catch (Exception ex)
+        {
+            messages.Add(ex.Message);
+        }
+    }
+
+    private async Task Send1()
+    {
+        try
+        {
+            if (hubConnection is not null)
+            {
+                await hubConnection.SendAsync("SendMessage1", myAccount, userInput, messageInput);
+            }
+        }
+        catch (Exception ex)
+        {
+            messages.Add(ex.Message);
+        }
+    }
+
+    public bool IsConnected => hubConnection?.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        if (hubConnection is not null)
+        {
+            await hubConnection.DisposeAsync();
+        }
+    }
+}
