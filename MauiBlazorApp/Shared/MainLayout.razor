@@ -45,8 +45,12 @@
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    // public static bool _showCounter = false;
     private Type? selectedType;
+
+    protected override async Task OnInitializedAsync()
+    {
+        GoHome();
+    }
 
     public void GoHome()
     {

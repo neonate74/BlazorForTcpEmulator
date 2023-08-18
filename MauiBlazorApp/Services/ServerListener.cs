@@ -14,9 +14,10 @@ public class ServerListener : INotification
 
     private byte[] szData;
 
-    public event EventHandler AcceptionCompleted;
-
+    private event EventHandler AcceptionCompleted;
     private EventHandler eventHandler;
+
+    public event EventHandler ConnectionDisconnected;
 
     public List<Socket> ClientSocketList
     {

@@ -1,5 +1,4 @@
 ﻿@page "/counter"
-@using MauiBlazorApp.Services;
 
 <h1>Counter</h1>
 
@@ -17,13 +16,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        NotificationService.ServerListenerModule.Subscribe(ServerCounter_AcceptionCompleted);
-    }
-
-    private void ServerCounter_AcceptionCompleted(object sender, EventArgs e)
-    {
-        currentCount++;
-
-        InvokeAsync(StateHasChanged);
+        currentCount = ((MainPage)App.Current.MainPage).CurrentConnection;
     }
 }

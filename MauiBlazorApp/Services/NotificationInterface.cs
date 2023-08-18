@@ -8,6 +8,8 @@ namespace MauiBlazorApp.Services
 {
     public interface INotification
     {
+        public event EventHandler ConnectionDisconnected;
+
         public void Subscribe(EventHandler evt);
 
         public void Unsubscribe(EventHandler evt);
