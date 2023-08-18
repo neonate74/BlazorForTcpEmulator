@@ -286,3 +286,8 @@ C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\obj\Debu
 C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\MauiAppForMainConsole.pdb
 C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\MauiAppForMainConsole.genruntimeconfig.cache
 C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\obj\Debug\net7.0-maccatalyst\maccatalyst-x64\ref\MauiAppForMainConsole.dll
+C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\bin\Debug\net7.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Features.dll
