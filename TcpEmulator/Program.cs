@@ -17,15 +17,11 @@ builder.Services.AddResponseCompression(opts =>
 var app = builder.Build();
 app.UseResponseCompression();
 
-var tcpConnector = new TcpEmulator.Connection.TcpConnector();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
 }
-
-tcpConnector.DoConnect();
 
 app.UseStaticFiles();
 

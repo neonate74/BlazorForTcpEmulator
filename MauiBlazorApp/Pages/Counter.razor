@@ -9,6 +9,8 @@
 @code {
     private int currentCount = 0;
 
+    private MainPage mainPage;
+
     private void IncrementCount()
     {
         currentCount++;
@@ -16,6 +18,16 @@
 
     protected override async Task OnInitializedAsync()
     {
-        currentCount = ((MainPage)App.Current.MainPage).CurrentConnection;
+        this.mainPage = (MainPage)App.Current.MainPage;
+        this.mainPage.ConnectionChanged += MainPage_ConnectionChanged;
+
+        currentCount = mainPage.CurrentConnection;
+    }
+
+    private void MainPage_ConnectionChanged(object sender, EventArgs e)
+    {
+        currentCount = mainPage.CurrentConnection;
+
+        InvokeAsync(StateHasChanged);
     }
 }

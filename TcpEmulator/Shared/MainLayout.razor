@@ -9,6 +9,9 @@
 
     <main>
         <div class="top-row px-4">
+            <div>
+                @connectedString @receivedString
+            </div>
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
 
@@ -17,3 +20,45 @@
         </article>
     </main>
 </div>
+
+@code {
+    private string connectedString = "";
+    private string receivedString = "";
+    private TcpEmulator.Connection.TcpConnector tcpConnector;
+
+    public void Refresh()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        tcpConnector = new TcpEmulator.Connection.TcpConnector();
+        tcpConnector.DataReceived += tcpConnector_DataReceived;
+        tcpConnector.ConnectionConnected += tcpConnector_ConnectionConnected;
+        tcpConnector.DoConnect();
+    }
+
+    private void tcpConnector_ConnectionConnected(object sender, EventArgs e)
+    {
+        if (tcpConnector != null)
+        {
+            if (sender != null)
+            {
+                connectedString = "접속 성공";
+            }
+        }
+
+        Refresh();
+    }
+
+    private void tcpConnector_DataReceived(object sender, EventArgs e)
+    {
+        if (tcpConnector != null)
+        {
+            receivedString = tcpConnector.ReceivedDataString;
+        }
+
+        Refresh();
+    }
+}

@@ -13,8 +13,13 @@ namespace TcpEmulator.Connection
 
         private int MaxSize = 4096;
 
-        private string HOST = "172.30.152.119";
+        private string HOST = "192.168.0.101";
         private int PORT = 8001;
+
+        public event EventHandler? DataReceived;
+        public event EventHandler? ConnectionConnected;
+
+        public string ReceivedDataString { get; set; } = "";
 
         public void DoConnect()
         {
@@ -50,6 +55,11 @@ namespace TcpEmulator.Connection
                         IPEndPoint svrEP = (IPEndPoint)tempSocket.RemoteEndPoint;
 
                         Console.WriteLine($"서버 접속 성공: {svrEP.Address}");
+
+                        if (ConnectionConnected != null)
+                        {
+                            ConnectionConnected.Invoke(tempSocket, new EventArgs());
+                        }
 
                         tempSocket.EndConnect(IAR);
                         serverSocket = tempSocket;
@@ -89,7 +99,12 @@ namespace TcpEmulator.Connection
 
                     if (nReadSize > 0)
                     {
-                        string sData = Encoding.UTF8.GetString(recvBuffer, 0, nReadSize);
+                        this.ReceivedDataString = Encoding.UTF8.GetString(recvBuffer, 0, nReadSize);
+
+                        if (this.DataReceived != null)
+                        {
+                            DataReceived.Invoke(tempSocket, new EventArgs());
+                        }
                     }
 
                     this.Receive();

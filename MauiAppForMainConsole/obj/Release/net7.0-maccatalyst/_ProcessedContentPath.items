@@ -2,21 +2,5 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Content Include="Resources\Raw\AboutAssets.txt" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\obj\Release\net7.0-maccatalyst\scopedcss\bundle\MauiAppForMainConsole.styles.css" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\obj\Release\net7.0-maccatalyst\scopedcss\projectbundle\MauiAppForMainConsole.bundle.scp.css" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\app.css" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\bootstrap\bootstrap.min.css" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\bootstrap\bootstrap.min.css.map" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\FONT-LICENSE" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\ICON-LICENSE" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\css\open-iconic\README.md" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\favicon.ico" />
-    <Content Include="C:\Users\monk74\source\repos\BlazorForTcpEmulator\MauiAppForMainConsole\wwwroot\index.html" />
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyTitleAttribute("MauiAppForMainConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst16.1")]
-[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("MacCatalyst14.0")]
+[assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("MacCatalyst16.1")]
 
 // MSBuild WriteCodeFragment 클래스에서 생성되었습니다.
 

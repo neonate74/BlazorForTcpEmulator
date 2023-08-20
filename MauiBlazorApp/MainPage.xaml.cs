@@ -7,6 +7,7 @@ namespace MauiBlazorApp
         private int currentCount = 0;
 
         public int CurrentConnection => currentCount;
+        public event EventHandler ConnectionChanged;
 
         public MainPage()
         {
@@ -19,11 +20,19 @@ namespace MauiBlazorApp
         private void ServerListenerModule_ConnectionDisconnected(object sender, EventArgs e)
         {
             currentCount--;
+
+            if (ConnectionChanged != null)
+                ConnectionChanged.Invoke(this, EventArgs.Empty);
         }
 
         private void ServerCounter_AcceptionCompleted(object sender, EventArgs e)
         {
             currentCount++;
+
+            if (ConnectionChanged != null)
+                ConnectionChanged.Invoke(this, EventArgs.Empty);
+
+            NotificationService.ServerListenerModule.SendData();
         }
     }
 }

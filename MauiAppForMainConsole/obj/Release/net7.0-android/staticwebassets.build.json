@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "66/dSlzfTubH1nf0oXOi1vfUdrnW+CrrDEMcLD8ZwPM=",
+  "Hash": "sEOoebMTnf2CJz/ddtp0NXkUeMeGWB/CfswNvwO3pR8=",
   "Source": "MauiAppForMainConsole",
   "BasePath": "/",
   "Mode": "Root",
@@ -10,17 +10,17 @@
     {
       "Name": "MauiAppForMainConsole\\wwwroot",
       "Source": "MauiAppForMainConsole",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\bundle\\MauiAppForMainConsole.styles.css",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\bundle\\MauiAppForMainConsole.styles.css",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\bundle\\",
       "BasePath": "/",
       "RelativePath": "MauiAppForMainConsole.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\bundle\\MauiAppForMainConsole.styles.css"
+      "OriginalItemSpec": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\bundle\\MauiAppForMainConsole.styles.css"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\projectbundle\\MauiAppForMainConsole.bundle.scp.css",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\projectbundle\\MauiAppForMainConsole.bundle.scp.css",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\projectbundle\\",
       "BasePath": "/",
       "RelativePath": "MauiAppForMainConsole.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\projectbundle\\MauiAppForMainConsole.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\Release\\net7.0-android\\scopedcss\\projectbundle\\MauiAppForMainConsole.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\app.css",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\app.css",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/app.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\app.css"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/css/open-iconic-bootstrap.min.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.eot",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.otf",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.svg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.ttf",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/font/fonts/open-iconic.woff",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/FONT-LICENSE",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/ICON-LICENSE",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\ICON-LICENSE"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\README.md",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\css\\open-iconic\\README.md",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "css/open-iconic/README.md",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\README.md"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\favicon.ico",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\index.html",
       "SourceId": "MauiAppForMainConsole",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\wwwroot\\",
       "BasePath": "/",
       "RelativePath": "index.html",
       "AssetKind": "All",

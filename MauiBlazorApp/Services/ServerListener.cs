@@ -137,5 +137,20 @@ public class ServerListener : INotification
             Console.WriteLine(ex.ToString());
         }
     }
+
+    public void SendData(Socket client = null, string message = "")
+    {
+        byte[] data = Encoding.UTF8.GetBytes(message.Trim().Length == 0 ? "connected" : message);
+
+        Task<int> task = client.SendAsync(data, SocketFlags.None);
+    }
+
+    public void SendData(string message = "")
+    {
+        byte[] data = Encoding.UTF8.GetBytes(message.Trim().Length == 0 ? "connected" : message);
+
+        int lastIndex = m_ClientSocket.Count - 1;
+        m_ClientSocket[lastIndex].SendAsync(data, SocketFlags.None);
+    }
 }
 
