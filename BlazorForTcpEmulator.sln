@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiAppForMainConsole", "Ma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppForSignalR", "BlazorAppForSignalR\BlazorAppForSignalR.csproj", "{1B88DB6B-4959-4CB8-B7DE-541E08D2D26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiBlazorApp", "MauiBlazorApp\MauiBlazorApp.csproj", "{681B1239-2603-4677-8C32-60BA9BBA51F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorApp", "MauiBlazorApp\MauiBlazorApp.csproj", "{681B1239-2603-4677-8C32-60BA9BBA51F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TcpEmulatorForBlazor", "TcpEmulatorForBlazor\TcpEmulatorForBlazor.csproj", "{AD8F7B01-2372-4919-8661-75BC8BE10667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{681B1239-2603-4677-8C32-60BA9BBA51F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681B1239-2603-4677-8C32-60BA9BBA51F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{681B1239-2603-4677-8C32-60BA9BBA51F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AD8F7B01-2372-4919-8661-75BC8BE10667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8F7B01-2372-4919-8661-75BC8BE10667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8F7B01-2372-4919-8661-75BC8BE10667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8F7B01-2372-4919-8661-75BC8BE10667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
