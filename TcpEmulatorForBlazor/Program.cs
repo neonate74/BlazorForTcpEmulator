@@ -4,9 +4,10 @@ using TcpEmulatorForBlazor.Data;
 
 namespace TcpEmulatorForBlazor
 {
-    public class Program
+    public static class Program
     {
         private static TcpEmulator.Connection.TcpConnector tcpConnector;
+        public static TcpEmulator.Connection.TcpConnector TcpConnector => tcpConnector;
 
         public static void Main(string[] args)
         {
@@ -44,32 +45,6 @@ namespace TcpEmulatorForBlazor
         private static void OnInitializedTcpConnector()
         {
             tcpConnector = new TcpEmulator.Connection.TcpConnector();
-            tcpConnector.DataReceived += tcpConnector_DataReceived;
-            tcpConnector.ConnectionConnected += tcpConnector_ConnectionConnected;
-            tcpConnector.DoConnect();
-        }
-
-        private static void tcpConnector_ConnectionConnected(object sender, EventArgs e)
-        {
-            if (tcpConnector != null)
-            {
-                if (sender != null)
-                {
-                    //connectedString = "접속 성공";
-                }
-            }
-
-            //Refresh();
-        }
-
-        private static void tcpConnector_DataReceived(object sender, EventArgs e)
-        {
-            if (tcpConnector != null)
-            {
-                //receivedString = tcpConnector.ReceivedDataString;
-            }
-
-            //Refresh();
         }
     }
 }

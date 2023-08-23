@@ -13,13 +13,14 @@ namespace TcpEmulator.Connection
 
         private int MaxSize = 4096;
 
-        //private string HOST = "192.168.0.101";
-        private string HOST = "172.30.152.119";
+        private string HOST = "192.168.0.101";
+        //private string HOST = "172.30.152.119";
 
         private int PORT = 8001;
 
         public event EventHandler? DataReceived;
-        public event EventHandler? ConnectionConnected;
+        public event EventHandler? ConnectedConnection;
+        public event EventHandler? DisConnectedConnection;
 
         public string ReceivedDataString { get; set; } = "";
 
@@ -29,6 +30,17 @@ namespace TcpEmulator.Connection
             clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             this.BeginConnect();
+        }
+
+        public void DoDisconnect()
+        {
+            clientSocket.Close();
+            clientSocket.Dispose();
+
+            if (DisConnectedConnection != null)
+            {
+                DisConnectedConnection.Invoke(clientSocket, new EventArgs());
+            }
         }
 
         public void BeginConnect()
@@ -58,9 +70,9 @@ namespace TcpEmulator.Connection
 
                         Console.WriteLine($"서버 접속 성공: {svrEP.Address}");
 
-                        if (ConnectionConnected != null)
+                        if (ConnectedConnection != null)
                         {
-                            ConnectionConnected.Invoke(tempSocket, new EventArgs());
+                            ConnectedConnection.Invoke(tempSocket, new EventArgs());
                         }
 
                         tempSocket.EndConnect(IAR);

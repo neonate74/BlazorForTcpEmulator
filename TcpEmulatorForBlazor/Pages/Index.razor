@@ -1,9 +1,82 @@
 ﻿@page "/"
+@using TcpEmulator.Connection;
 
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
-Welcome to your new app.
+<div>Welcome to your new app.</div>
+
+<div>
+    <button class="btn btn-primary" @onclick="ConnectClient">@BtnConnectString</button>
+</div>
+
+<div>@connectedString</div>
+<div>@receivedString</div>
 
 <Counter />
+
+@code {
+    private string BtnConnectString = "Connect";
+    private string connectedString;
+    private string receivedString;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    private void ConnectClient()
+    {
+        if (this.BtnConnectString == "Connect")
+        {
+            TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection += tcpConnector_ConnectionConnected;
+            TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection += tcpConnector_DisConnectedConnection;
+            TcpEmulatorForBlazor.Program.TcpConnector.DataReceived += tcpConnector_DataReceived;
+
+            TcpEmulatorForBlazor.Program.TcpConnector.DoConnect();
+        }
+        else
+        {
+            TcpEmulatorForBlazor.Program.TcpConnector.DoDisconnect();
+        }
+    }
+
+    private void tcpConnector_DataReceived(object sender, EventArgs e)
+    {
+        if (TcpEmulatorForBlazor.Program.TcpConnector != null)
+        {
+            this.receivedString = TcpEmulatorForBlazor.Program.TcpConnector.ReceivedDataString;
+
+            InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private void tcpConnector_DisConnectedConnection(object sender, EventArgs e)
+    {
+        if (TcpEmulatorForBlazor.Program.TcpConnector != null)
+        {
+            if (sender != null)
+            {
+                this.connectedString = "접속해제";
+                BtnConnectString = "Connect";
+
+                InvokeAsync(StateHasChanged);
+            }
+        }
+    }
+
+    private void tcpConnector_ConnectionConnected(object sender, EventArgs e)
+    {
+        if (TcpEmulatorForBlazor.Program.TcpConnector != null)
+        {
+            if (sender != null)
+            {
+                this.connectedString = "접속성공";
+                BtnConnectString = "DisConnect";
+
+                InvokeAsync(StateHasChanged);
+            }
+        }
+    }
+}

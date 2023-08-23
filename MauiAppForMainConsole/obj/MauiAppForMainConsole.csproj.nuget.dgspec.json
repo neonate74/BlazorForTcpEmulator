@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj": {}
+    "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj": {}
   },
   "projects": {
-    "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj": {
+    "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj",
+        "projectUniqueName": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj",
         "projectName": "MauiAppForMainConsole",
-        "projectPath": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj",
-        "packagesPath": "C:\\Users\\monk74\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\",
+        "projectPath": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj",
+        "packagesPath": "C:\\Users\\kbhan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kbhan\\source\\BlazorForTcpEmulator\\MauiAppForMainConsole\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\monk74\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kbhan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -399,10 +399,6 @@
               "version": "[7.0.10, 7.0.10]"
             },
             {
-              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
-              "version": "[7.0.10, 7.0.10]"
-            },
-            {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
               "version": "[7.0.10, 7.0.10]"
             },
@@ -449,9 +445,6 @@
           "#import": []
         },
         "iossimulator-x64": {
-          "#import": []
-        },
-        "maccatalyst-arm64": {
           "#import": []
         },
         "maccatalyst-x64": {
