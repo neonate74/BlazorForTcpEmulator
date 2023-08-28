@@ -1,4 +1,5 @@
 ﻿using MauiBlazorApp.Services;
+using Microsoft.Extensions.Configuration;
 
 namespace MauiBlazorApp
 {
@@ -9,12 +10,21 @@ namespace MauiBlazorApp
         public int CurrentConnection => currentCount;
         public event EventHandler ConnectionChanged;
 
-        public MainPage()
+        private readonly IConfiguration _configuration;
+
+        public IConfiguration Configuration
+        {
+            get { return _configuration; }
+        }
+
+        public MainPage(IConfiguration config)
         {
             InitializeComponent();
             NotificationService.ServerListenerModule.Subscribe(ServerCounter_AcceptionCompleted);
 
             NotificationService.ServerListenerModule.ConnectionDisconnected += ServerListenerModule_ConnectionDisconnected;
+
+            _configuration = config;
         }
 
         private void ServerListenerModule_ConnectionDisconnected(object sender, EventArgs e)

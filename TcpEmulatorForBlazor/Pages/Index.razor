@@ -7,14 +7,12 @@
 
 <div>Welcome to your new app.</div>
 
-<div>
-    <button class="btn btn-primary" @onclick="ConnectClient">@BtnConnectString</button>
+<div style="margin-bottom: 10px;">
+    <button class="btn btn-primary" @onclick="ChangeTcpConnectorStatus">@BtnConnectString</button>
 </div>
 
 <div>@connectedString</div>
 <div>@receivedString</div>
-
-<Counter />
 
 @code {
     private string BtnConnectString = "Connect";
@@ -23,17 +21,28 @@
 
     protected override async Task OnInitializedAsync()
     {
-
-    }
-
-    private void ConnectClient()
-    {
-        if (this.BtnConnectString == "Connect")
+        if (TcpEmulatorForBlazor.Program.TcpConnector != null)
         {
+            try
+            {
+                TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection -= tcpConnector_ConnectionConnected;
+                TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection -= tcpConnector_DisConnectedConnection;
+                TcpEmulatorForBlazor.Program.TcpConnector.DataReceived -= tcpConnector_DataReceived;
+            }
+            catch { }
+
             TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection += tcpConnector_ConnectionConnected;
             TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection += tcpConnector_DisConnectedConnection;
             TcpEmulatorForBlazor.Program.TcpConnector.DataReceived += tcpConnector_DataReceived;
 
+            this.DisplayTcpConnectorStatus();
+        }
+    }
+
+    private void ChangeTcpConnectorStatus()
+    {
+        if (this.BtnConnectString == "Connect")
+        {
             TcpEmulatorForBlazor.Program.TcpConnector.DoConnect();
         }
         else
@@ -52,31 +61,34 @@
         }
     }
 
-    private void tcpConnector_DisConnectedConnection(object sender, EventArgs e)
+    private void DisplayTcpConnectorStatus(bool IsConnected = false)
     {
         if (TcpEmulatorForBlazor.Program.TcpConnector != null)
         {
-            if (sender != null)
-            {
-                this.connectedString = "접속해제";
-                BtnConnectString = "Connect";
-
-                InvokeAsync(StateHasChanged);
-            }
+            IsConnected = TcpEmulatorForBlazor.Program.TcpConnector.IsConnected;
         }
+
+        if (IsConnected)
+        {
+            this.connectedString = "접속성공";
+            BtnConnectString = "DisConnect";
+        }
+        else
+        {
+            this.connectedString = "접속해제";
+            BtnConnectString = "Connect";
+        }
+
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void tcpConnector_DisConnectedConnection(object sender, EventArgs e)
+    {
+        this.DisplayTcpConnectorStatus(false);
     }
 
     private void tcpConnector_ConnectionConnected(object sender, EventArgs e)
     {
-        if (TcpEmulatorForBlazor.Program.TcpConnector != null)
-        {
-            if (sender != null)
-            {
-                this.connectedString = "접속성공";
-                BtnConnectString = "DisConnect";
-
-                InvokeAsync(StateHasChanged);
-            }
-        }
+        this.DisplayTcpConnectorStatus(true);
     }
 }

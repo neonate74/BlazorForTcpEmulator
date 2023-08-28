@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using MauiBlazorApp.Data;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -18,6 +19,7 @@ public class ServerListener : INotification
     private EventHandler eventHandler;
 
     public event EventHandler ConnectionDisconnected;
+    public event EventHandler DataReceived;
 
     public List<Socket> ClientSocketList
     {
@@ -111,9 +113,12 @@ public class ServerListener : INotification
                 if (e.BytesTransferred > 0)
                 {
                     byte[] szData = e.Buffer;
-                    string sData = Encoding.UTF8.GetString(szData);
+                    string sData = Encoding.UTF8.GetString(szData).Replace("\0", "");
 
-                    string Test = sData.Replace("\0", "");
+                    if (DataReceived != null)
+                    {
+                        DataReceived.BeginInvoke(sData, new EventArgs(), CallbackDataReceivedInvoke, new DataReceivedSocket(clientSocket, sData));
+                    }
 
                     Thread.Sleep(1000);
                     for (int i = 0; i < szData.Length; i++)
@@ -126,10 +131,7 @@ public class ServerListener : INotification
             }
             else
             {
-                clientSocket.Disconnect(false);
-                m_ClientSocket.Remove(clientSocket);
-
-                Console.WriteLine($"'{clientSocket.LocalEndPoint.ToString()}'의 연결이 끊어졌습니다.");
+                this.DisConnectTcpClientSocket(clientSocket);
             }
         }
         catch (Exception ex)
@@ -138,18 +140,44 @@ public class ServerListener : INotification
         }
     }
 
+    private void CallbackDataReceivedInvoke(IAsyncResult sender)
+    {
+        if (sender != null)
+        {
+            DataReceivedSocket socket = (DataReceivedSocket)sender.AsyncState;
+
+            switch (socket.ReceivedData)
+            {
+                case "RequestDisconnect":
+                    this.DisConnectTcpClientSocket(socket.ClientSocket);
+                    this.SendData(socket.ClientSocket, "DisconnectOK");
+                    break;
+            }
+        }
+    }
+
+    private void DisConnectTcpClientSocket(Socket clientSocket)
+    {
+        string temp = clientSocket.LocalEndPoint.ToString();
+        clientSocket.Disconnect(false);
+        m_ClientSocket.Remove(clientSocket);
+
+        Console.WriteLine($"'{temp}'의 연결이 끊어졌습니다.");
+    }
+
     public void SendData(Socket client = null, string message = "")
     {
-        byte[] data = Encoding.UTF8.GetBytes(message.Trim().Length == 0 ? "connected" : message);
+        byte[] data = Encoding.UTF8.GetBytes(message.Trim().Length == 0 ? $"{client.RemoteEndPoint.ToString()} : connected" : message);
 
         Task<int> task = client.SendAsync(data, SocketFlags.None);
     }
 
     public void SendData(string message = "")
     {
-        byte[] data = Encoding.UTF8.GetBytes(message.Trim().Length == 0 ? "connected" : message);
-
         int lastIndex = m_ClientSocket.Count - 1;
+
+        byte[] data = Encoding.UTF8.GetBytes(message.Trim().Length == 0 ? $"{m_ClientSocket[lastIndex].RemoteEndPoint.ToString()} : connected" : message);
+
         m_ClientSocket[lastIndex].SendAsync(data, SocketFlags.None);
     }
 }

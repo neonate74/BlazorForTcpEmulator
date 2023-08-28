@@ -13,8 +13,8 @@ namespace TcpEmulator.Connection
 
         private int MaxSize = 4096;
 
-        private string HOST = "192.168.0.101";
-        //private string HOST = "172.30.152.119";
+        //private string HOST = "192.168.0.101";
+        private string HOST = "172.30.152.119";
 
         private int PORT = 8001;
 
@@ -23,6 +23,13 @@ namespace TcpEmulator.Connection
         public event EventHandler? DisConnectedConnection;
 
         public string ReceivedDataString { get; set; } = "";
+        public bool IsConnected
+        {
+            get
+            {
+                return (clientSocket == null) ? false : clientSocket.Connected;
+            }
+        }
 
         public void DoConnect()
         {
@@ -34,13 +41,15 @@ namespace TcpEmulator.Connection
 
         public void DoDisconnect()
         {
-            clientSocket.Close();
-            clientSocket.Dispose();
+            this.BeginSend("RequestDisconnect");
 
-            if (DisConnectedConnection != null)
-            {
-                DisConnectedConnection.Invoke(clientSocket, new EventArgs());
-            }
+            //clientSocket.Close();
+            //clientSocket.Dispose();
+
+            //if (DisConnectedConnection != null)
+            //{
+            //    DisConnectedConnection.Invoke(clientSocket, new EventArgs());
+            //}
         }
 
         public void BeginConnect()

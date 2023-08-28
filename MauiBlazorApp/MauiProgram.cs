@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using MauiBlazorApp.Services;
+using Microsoft.Extensions.Configuration;
+using System.Reflection;
 
 namespace MauiBlazorApp
 {
@@ -14,6 +16,13 @@ namespace MauiBlazorApp
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
+
+            using var stream = Assembly.GetExecutingAssembly()
+                           .GetManifestResourceStream("MauiBlazorApp.appsettings.json");
+            var config = new ConfigurationBuilder().AddJsonStream(stream).Build();
+            builder.Configuration.AddConfiguration(config);
+
+            builder.Services.AddTransient<MainPage>();
 
             builder.Services.AddMauiBlazorWebView();
 

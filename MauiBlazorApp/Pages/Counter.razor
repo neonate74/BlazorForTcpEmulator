@@ -1,13 +1,18 @@
 ﻿@page "/counter"
+@using MauiBlazorApp.Services;
 
-<h1>Counter</h1>
+<h1>Connection Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">Current Connection: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+@* <button class="btn btn-primary" @onclick="IncrementCount">Click me</button> *@
+
+<textarea style="margin-top: 10px; border: 1px solid gray; width: 90%;" rows="10">@logString</textarea>
 
 @code {
     private int currentCount = 0;
+
+    private string logString;
 
     private MainPage mainPage;
 
@@ -18,8 +23,11 @@
 
     protected override async Task OnInitializedAsync()
     {
+        string aaa = App.GetConfigSectionValue("KeyOne");
+
         this.mainPage = (MainPage)App.Current.MainPage;
         this.mainPage.ConnectionChanged += MainPage_ConnectionChanged;
+        NotificationService.ServerListenerModule.DataReceived += ServerListenerModule_DataReceived;
 
         currentCount = mainPage.CurrentConnection;
     }
@@ -27,6 +35,13 @@
     private void MainPage_ConnectionChanged(object sender, EventArgs e)
     {
         currentCount = mainPage.CurrentConnection;
+
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void ServerListenerModule_DataReceived(object sender, EventArgs e)
+    {
+        logString += sender.ToString() + "\r\n";
 
         InvokeAsync(StateHasChanged);
     }
