@@ -1,0 +1,2513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MODECOMMONModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnonymousMapEntity">
+          <Key>
+            <PropertyRef Name="AnonymousMapEntiryId" />
+          </Key>
+          <Property Name="AnonymousMapEntiryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MappingSourceDomain" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="MappingSourceEntity" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="MappingSourceEntityDesc" Type="nvarchar" MaxLength="400" />
+          <Property Name="MappedTargetDomain" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="MappedTargetEntity" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="MappedTargetEntityDesc" Type="nvarchar" MaxLength="400" />
+          <Property Name="AnonymousMapDesc" Type="nvarchar" MaxLength="400" />
+          <Property Name="SortOrder" Type="smallint" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CommonCode">
+          <Key>
+            <PropertyRef Name="CodeId" />
+          </Key>
+          <Property Name="CodeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeValue" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="CodeDesc" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ClientFriendlyCodeName" Type="nvarchar" MaxLength="400" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="smallint" Nullable="false" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="AsisCategory" Type="nvarchar" MaxLength="3" />
+          <Property Name="AsisCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CommonCodeDetail">
+          <Key>
+            <PropertyRef Name="CodeDetailId" />
+          </Key>
+          <Property Name="CodeDetailId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DetailSlot" Type="smallint" Nullable="false" />
+          <Property Name="DetailInfo" Type="nvarchar(max)" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="CommonFile">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileTypeCmnCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileServerPath" Type="nvarchar" MaxLength="1500" />
+          <Property Name="FilePublicUrl" Type="nvarchar" MaxLength="1500" />
+          <Property Name="ContentsName" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreationTypeCmnCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="AsisInflowChannelNo" Type="int" />
+          <Property Name="InflowChannelId" Type="uniqueidentifier" />
+          <Property Name="InflowChannelName" Type="nvarchar" MaxLength="200" />
+          <Property Name="UseRangeCmnCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileExtension" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsEditable" Type="bit" Nullable="false" />
+          <Property Name="FileCategoryId" Type="uniqueidentifier" />
+          <Property Name="FileRemark" Type="nvarchar" MaxLength="100" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="AdditionalInfo" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="PLID" Type="int" />
+          <Property Name="FileTag" Type="varchar" MaxLength="1000" />
+          <Property Name="FileSize" Type="int" />
+        </EntityType>
+        <EntityType Name="CommonFileTimeline">
+          <Key>
+            <PropertyRef Name="FileTimelineId" />
+          </Key>
+          <Property Name="FileTimelineId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileTypeCmnCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileServerPath" Type="nvarchar" MaxLength="1500" />
+          <Property Name="FilePublicUrl" Type="nvarchar" MaxLength="1500" />
+          <Property Name="ContentsName" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreationTypeCmnCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="AsisInflowChannelNo" Type="int" />
+          <Property Name="InflowChannelId" Type="uniqueidentifier" />
+          <Property Name="InflowChannelName" Type="nvarchar" MaxLength="200" />
+          <Property Name="UseRangeCmnCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileExtension" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsEditable" Type="bit" Nullable="false" />
+          <Property Name="FileCategoryId" Type="uniqueidentifier" />
+          <Property Name="FileRemark" Type="nvarchar" MaxLength="100" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="AdditionalInfo" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="FileTag" Type="varchar" MaxLength="1000" />
+          <Property Name="FileSize" Type="int" />
+        </EntityType>
+        <EntityType Name="CommonKeywordData">
+          <Key>
+            <PropertyRef Name="Keyword" />
+          </Key>
+          <Property Name="KeywordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Keyword" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'MODECOMMON.dbo.CommonKeywordMap'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="CommonKeywordMap">
+          <Key>
+            <PropertyRef Name="KeywordId" />
+            <PropertyRef Name="ObjectId" />
+            <PropertyRef Name="IsCommonFile" />
+            <PropertyRef Name="IsFileCategory" />
+          </Key>
+          <Property Name="KeywordId" Type="int" Nullable="false" />
+          <Property Name="ObjectId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsCommonFile" Type="bit" Nullable="false" />
+          <Property Name="IsFileCategory" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommonTranTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Desc" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DDLHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EventType" Type="varchar" MaxLength="128" />
+          <Property Name="PostTime" Type="datetime" />
+          <Property Name="LoginName" Type="varchar" MaxLength="128" />
+          <Property Name="UserName" Type="varchar" MaxLength="128" />
+          <Property Name="HostName" Type="nvarchar" MaxLength="128" />
+          <Property Name="DatabaseName" Type="varchar" MaxLength="128" />
+          <Property Name="SchemaName" Type="varchar" MaxLength="128" />
+          <Property Name="ObjectName" Type="varchar" MaxLength="128" />
+          <Property Name="ObjectType" Type="varchar" MaxLength="128" />
+          <Property Name="CommandText" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="FileCategory">
+          <Key>
+            <PropertyRef Name="FileCategoryId" />
+          </Key>
+          <Property Name="FileCategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileCategoryName" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="Depth" Type="smallint" />
+        </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'MODECOMMON.dbo.FileCategory_bak'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="FileCategory_bak">
+          <Key>
+            <PropertyRef Name="FileCategoryId" />
+            <PropertyRef Name="FileCategoryName" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedAt" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedAt" />
+          </Key>
+          <Property Name="FileCategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileCategoryName" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="Depth" Type="smallint" />
+        </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'MODECOMMON.dbo.Notification'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+            <PropertyRef Name="SysUserId" />
+            <PropertyRef Name="NotificationType" />
+            <PropertyRef Name="Parameter" />
+            <PropertyRef Name="IsRead" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedAt" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedAt" />
+          </Key>
+          <Property Name="NotificationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SysUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NotificationType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Parameter" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsRead" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SignalRConnection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppType" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ConnectionId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SignalRUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysAccessSetting">
+          <Key>
+            <PropertyRef Name="AccessId" />
+          </Key>
+          <Property Name="AccessId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccessTarget" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AccessTargetId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccessorType" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AccessorIds" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysAuthority">
+          <Key>
+            <PropertyRef Name="AuthorityId" />
+          </Key>
+          <Property Name="AuthorityId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthorityType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TargetId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserDefined" Type="nvarchar(max)" />
+          <Property Name="CanUse" Type="bit" Nullable="false" />
+          <Property Name="CanCreate" Type="bit" Nullable="false" />
+          <Property Name="CanDelete" Type="bit" Nullable="false" />
+          <Property Name="CanSave" Type="bit" Nullable="false" />
+          <Property Name="CanPdf" Type="bit" Nullable="false" />
+          <Property Name="CanExcel" Type="bit" Nullable="false" />
+          <Property Name="CanPrint" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysCode">
+          <Key>
+            <PropertyRef Name="SysCodeId" />
+          </Key>
+          <Property Name="SysCodeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeCategory" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CodeValue" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="CodeDesc" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="smallint" Nullable="false" />
+          <Property Name="ExtraInfo" Type="nvarchar(max)" />
+          <Property Name="CodeRemark" Type="nvarchar(max)" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysCodeHelper">
+          <Key>
+            <PropertyRef Name="CodeHelperId" />
+          </Key>
+          <Property Name="CodeHelperId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeHelperKey" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodeHelperName" Type="nvarchar" MaxLength="500" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="ServiceDomain" Type="nvarchar" MaxLength="100" />
+          <Property Name="BizName" Type="nvarchar" MaxLength="100" />
+          <Property Name="MethodName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Condition" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="UseName" Type="bit" />
+          <Property Name="NameHeaderText" Type="nvarchar" MaxLength="200" />
+          <Property Name="UseValue" Type="bit" />
+          <Property Name="ValueHeaderText" Type="nvarchar" MaxLength="200" />
+          <Property Name="UseValue2" Type="bit" />
+          <Property Name="Value2HeaderText" Type="nvarchar" MaxLength="200" />
+          <Property Name="UseValue3" Type="bit" />
+          <Property Name="Value3HeaderText" Type="nvarchar" MaxLength="200" />
+          <Property Name="UseDescription" Type="bit" />
+          <Property Name="SelectionMode" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysDepartment">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkDivisionType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TicketingDepartment" Type="int" />
+          <Property Name="Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="DepartmentRole" Type="nvarchar" MaxLength="10" />
+          <Property Name="WorkDivisionTypeEx" Type="nvarchar" MaxLength="20" />
+          <Property Name="AccountingPartner" Type="int" />
+          <Property Name="Division" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="GroupLevel" Type="nvarchar" MaxLength="5" />
+          <Property Name="GroupLeader" Type="uniqueidentifier" />
+          <Property Name="GroupLeaderPosition" Type="nvarchar" MaxLength="5" />
+          <Property Name="HrManager" Type="uniqueidentifier" />
+          <Property Name="GroupDivision" Type="nvarchar" MaxLength="5" />
+          <Property Name="GroupMission" Type="nvarchar" MaxLength="1000" />
+          <Property Name="GroupGoal" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsRevenueDepartment" Type="bit" />
+          <Property Name="GroupRole" Type="nvarchar" MaxLength="5" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysDiagram">
+          <Key>
+            <PropertyRef Name="DiagramId" />
+          </Key>
+          <Property Name="DiagramId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DiagramName" Type="nvarchar" MaxLength="30" />
+          <Property Name="DiagramDescription" Type="nvarchar" MaxLength="120" />
+          <Property Name="DiagramXml" Type="nvarchar(max)" />
+          <Property Name="SortOrder" Type="smallint" Nullable="false" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiagramType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AppType" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysMenu">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MenuLevel" Type="int" />
+          <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MenuType" Type="nvarchar" MaxLength="20" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParentMenuId" Type="uniqueidentifier" />
+          <Property Name="SortOrder" Type="smallint" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="ButtonSize" Type="nvarchar" MaxLength="20" />
+          <Property Name="SubUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="HelpUrl" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="IsMobileUse" Type="bit" />
+          <Property Name="IsPopup" Type="bit" />
+          <Property Name="ViewId" Type="uniqueidentifier" />
+          <Property Name="Parameter" Type="nvarchar(max)" />
+          <Property Name="UserDefinePermission" Type="nvarchar(max)" />
+          <Property Name="AppType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MenuDisplayType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="Company" Type="nvarchar" MaxLength="30" />
+          <Property Name="Factory" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="SysNotification">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+          </Key>
+          <Property Name="NotificationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SysUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NotificationType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Parameter" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsRead" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="SysUserId" />
+          </Key>
+          <Property Name="SysUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="KorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EngName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsPinSetting" Type="bit" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="IsTest" Type="bit" />
+        </EntityType>
+        <EntityType Name="SysUserAuth">
+          <Key>
+            <PropertyRef Name="AuthId" />
+          </Key>
+          <Property Name="AuthId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="WorkAuthCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="SysUserId" Type="uniqueidentifier" />
+          <Property Name="UserDefined" Type="nvarchar(max)" />
+          <Property Name="CanUse" Type="bit" Nullable="false" />
+          <Property Name="CanSearch" Type="bit" Nullable="false" />
+          <Property Name="CanCreate" Type="bit" Nullable="false" />
+          <Property Name="CanDelete" Type="bit" Nullable="false" />
+          <Property Name="CanSave" Type="bit" Nullable="false" />
+          <Property Name="CanReset" Type="bit" Nullable="false" />
+          <Property Name="CanPdf" Type="bit" Nullable="false" />
+          <Property Name="CanExcel" Type="bit" Nullable="false" />
+          <Property Name="CanPrint" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysUserSetting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SysUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SettingType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="CommonId" Type="uniqueidentifier" />
+          <Property Name="Parameter" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SysView">
+          <Key>
+            <PropertyRef Name="ViewId" />
+          </Key>
+          <Property Name="ViewId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AppModule" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ViewName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ViewDesc" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+          <Property Name="ViewType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ViewCategoryType" Type="nvarchar" MaxLength="20" />
+          <Property Name="AppType" Type="nvarchar" MaxLength="20" />
+          <Property Name="ClassName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="UserCode">
+          <Key>
+            <PropertyRef Name="UserCodeId" />
+          </Key>
+          <Property Name="UserCodeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeCategory" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="CodeValue" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="CodeDesc" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ClientFriendlyCodeName" Type="nvarchar" MaxLength="400" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="SortOrder" Type="smallint" Nullable="false" />
+          <Property Name="Info01" Type="nvarchar(max)" />
+          <Property Name="Info02" Type="nvarchar(max)" />
+          <Property Name="Info03" Type="nvarchar(max)" />
+          <Property Name="Info04" Type="nvarchar(max)" />
+          <Property Name="Info05" Type="nvarchar(max)" />
+          <Property Name="Info06" Type="nvarchar(max)" />
+          <Property Name="Info07" Type="nvarchar(max)" />
+          <Property Name="Info08" Type="nvarchar(max)" />
+          <Property Name="Info09" Type="nvarchar(max)" />
+          <Property Name="Info10" Type="nvarchar(max)" />
+          <Property Name="Info11" Type="nvarchar(max)" />
+          <Property Name="Info12" Type="nvarchar(max)" />
+          <Property Name="Info13" Type="nvarchar(max)" />
+          <Property Name="Info14" Type="nvarchar(max)" />
+          <Property Name="Info15" Type="nvarchar(max)" />
+          <Property Name="Info16" Type="nvarchar(max)" />
+          <Property Name="Info17" Type="nvarchar(max)" />
+          <Property Name="Info18" Type="nvarchar(max)" />
+          <Property Name="Info19" Type="nvarchar(max)" />
+          <Property Name="Info20" Type="nvarchar(max)" />
+          <Property Name="Info21" Type="nvarchar(max)" />
+          <Property Name="Info22" Type="nvarchar(max)" />
+          <Property Name="Info23" Type="nvarchar(max)" />
+          <Property Name="Info24" Type="nvarchar(max)" />
+          <Property Name="Info25" Type="nvarchar(max)" />
+          <Property Name="Info26" Type="nvarchar(max)" />
+          <Property Name="Info27" Type="nvarchar(max)" />
+          <Property Name="Info28" Type="nvarchar(max)" />
+          <Property Name="Info29" Type="nvarchar(max)" />
+          <Property Name="Info30" Type="nvarchar(max)" />
+          <Property Name="Info31" Type="nvarchar(max)" />
+          <Property Name="Info32" Type="nvarchar(max)" />
+          <Property Name="Info33" Type="nvarchar(max)" />
+          <Property Name="Info34" Type="nvarchar(max)" />
+          <Property Name="Info35" Type="nvarchar(max)" />
+          <Property Name="Info36" Type="nvarchar(max)" />
+          <Property Name="Info37" Type="nvarchar(max)" />
+          <Property Name="Info38" Type="nvarchar(max)" />
+          <Property Name="Info39" Type="nvarchar(max)" />
+          <Property Name="Info40" Type="nvarchar(max)" />
+          <Property Name="Info41" Type="nvarchar(max)" />
+          <Property Name="Info42" Type="nvarchar(max)" />
+          <Property Name="Info43" Type="nvarchar(max)" />
+          <Property Name="Info44" Type="nvarchar(max)" />
+          <Property Name="Info45" Type="nvarchar(max)" />
+          <Property Name="Info46" Type="nvarchar(max)" />
+          <Property Name="Info47" Type="nvarchar(max)" />
+          <Property Name="Info48" Type="nvarchar(max)" />
+          <Property Name="Info49" Type="nvarchar(max)" />
+          <Property Name="Info50" Type="nvarchar(max)" />
+          <Property Name="Info51" Type="nvarchar(max)" />
+          <Property Name="Info52" Type="nvarchar(max)" />
+          <Property Name="Info53" Type="nvarchar(max)" />
+          <Property Name="Info54" Type="nvarchar(max)" />
+          <Property Name="Info55" Type="nvarchar(max)" />
+          <Property Name="Info56" Type="nvarchar(max)" />
+          <Property Name="Info57" Type="nvarchar(max)" />
+          <Property Name="Info58" Type="nvarchar(max)" />
+          <Property Name="Info59" Type="nvarchar(max)" />
+          <Property Name="Info60" Type="nvarchar(max)" />
+          <Property Name="Info61" Type="nvarchar(max)" />
+          <Property Name="Info62" Type="nvarchar(max)" />
+          <Property Name="Info63" Type="nvarchar(max)" />
+          <Property Name="Info64" Type="nvarchar(max)" />
+          <Property Name="Info65" Type="nvarchar(max)" />
+          <Property Name="Info66" Type="nvarchar(max)" />
+          <Property Name="Info67" Type="nvarchar(max)" />
+          <Property Name="Info68" Type="nvarchar(max)" />
+          <Property Name="Info69" Type="nvarchar(max)" />
+          <Property Name="Info70" Type="nvarchar(max)" />
+          <Property Name="Info71" Type="nvarchar(max)" />
+          <Property Name="Info72" Type="nvarchar(max)" />
+          <Property Name="Info73" Type="nvarchar(max)" />
+          <Property Name="Info74" Type="nvarchar(max)" />
+          <Property Name="Info75" Type="nvarchar(max)" />
+          <Property Name="Info76" Type="nvarchar(max)" />
+          <Property Name="Info77" Type="nvarchar(max)" />
+          <Property Name="Info78" Type="nvarchar(max)" />
+          <Property Name="Info79" Type="nvarchar(max)" />
+          <Property Name="Info80" Type="nvarchar(max)" />
+          <Property Name="Info81" Type="nvarchar(max)" />
+          <Property Name="Info82" Type="nvarchar(max)" />
+          <Property Name="Info83" Type="nvarchar(max)" />
+          <Property Name="Info84" Type="nvarchar(max)" />
+          <Property Name="Info85" Type="nvarchar(max)" />
+          <Property Name="Info86" Type="nvarchar(max)" />
+          <Property Name="Info87" Type="nvarchar(max)" />
+          <Property Name="Info88" Type="nvarchar(max)" />
+          <Property Name="Info89" Type="nvarchar(max)" />
+          <Property Name="Info90" Type="nvarchar(max)" />
+          <Property Name="Info91" Type="nvarchar(max)" />
+          <Property Name="Info92" Type="nvarchar(max)" />
+          <Property Name="Info93" Type="nvarchar(max)" />
+          <Property Name="Info94" Type="nvarchar(max)" />
+          <Property Name="Info95" Type="nvarchar(max)" />
+          <Property Name="Info96" Type="nvarchar(max)" />
+          <Property Name="Info97" Type="nvarchar(max)" />
+          <Property Name="Info98" Type="nvarchar(max)" />
+          <Property Name="Info99" Type="nvarchar(max)" />
+          <Property Name="ExtraInfo" Type="nvarchar(max)" />
+          <Property Name="CodeRemark" Type="nvarchar(max)" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="WebStaticFileErrorLog">
+          <Key>
+            <PropertyRef Name="WebStaticFileErrorLogId" />
+          </Key>
+          <Property Name="WebStaticFileErrorLogId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BizType" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="BizMethod" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Error" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Solved" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="WpfResource">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+          </Key>
+          <Property Name="ResourceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ResourceBoundary" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LanguageKey" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KorValue" Type="nvarchar(max)" />
+          <Property Name="EngValue" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="IsUse" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="CreatedMenuId" Type="uniqueidentifier" />
+          <Property Name="UpdatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedMenuId" Type="uniqueidentifier" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedAt" Type="datetime2" Precision="7" />
+          <Property Name="DeletedMenuId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Messages_DefaultHub_0">
+          <Key>
+            <PropertyRef Name="PayloadId" />
+          </Key>
+          <Property Name="PayloadId" Type="bigint" Nullable="false" />
+          <Property Name="Payload" Type="varbinary(max)" Nullable="false" />
+          <Property Name="InsertedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Messages_DefaultHub_0_Id">
+          <Key>
+            <PropertyRef Name="PayloadId" />
+          </Key>
+          <Property Name="PayloadId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="SchemaVersion" />
+          </Key>
+          <Property Name="SchemaVersion" Type="int" Nullable="false" />
+        </EntityType>
+        <!--생성 중 오류 발생:
+경고 6002: 테이블/뷰 'MODECOMMON.dbo.SysAuthView'에 기본 키가 정의되지 않았습니다. 키가 유추되었고 읽기 전용 테이블/뷰로 정의되었습니다.-->
+        <EntityType Name="SysAuthView">
+          <Key>
+            <PropertyRef Name="AuthType" />
+            <PropertyRef Name="MenuId" />
+            <PropertyRef Name="MenuSortOrder" />
+          </Key>
+          <Property Name="AuthType" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="WorkAuthCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SysUserId" Type="uniqueidentifier" />
+          <Property Name="AuthId" Type="uniqueidentifier" />
+          <Property Name="SortOrder" Type="smallint" />
+          <Property Name="ParentMenuId" Type="uniqueidentifier" />
+          <Property Name="MenuSortOrder" Type="smallint" Nullable="false" />
+          <Property Name="UserDefinePermission" Type="nvarchar(max)" />
+          <Property Name="ViewId" Type="uniqueidentifier" />
+        </EntityType>
+        <Association Name="FK_SignalRConnection_SignalRUser">
+          <End Role="SignalRUser" Type="Self.SignalRUser" Multiplicity="1" />
+          <End Role="SignalRConnection" Type="Self.SignalRConnection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignalRUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignalRConnection">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MODECOMMONModelStoreContainer">
+          <EntitySet Name="AnonymousMapEntity" EntityType="Self.AnonymousMapEntity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonCode" EntityType="Self.CommonCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonCodeDetail" EntityType="Self.CommonCodeDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonFile" EntityType="Self.CommonFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonFileTimeline" EntityType="Self.CommonFileTimeline" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonKeywordData" EntityType="Self.CommonKeywordData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonTranTest" EntityType="Self.CommonTranTest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DDLHistory" EntityType="Self.DDLHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FileCategory" EntityType="Self.FileCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignalRConnection" EntityType="Self.SignalRConnection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignalRUser" EntityType="Self.SignalRUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysAccessSetting" EntityType="Self.SysAccessSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysAuthority" EntityType="Self.SysAuthority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysCode" EntityType="Self.SysCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysCodeHelper" EntityType="Self.SysCodeHelper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysDepartment" EntityType="Self.SysDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysDiagram" EntityType="Self.SysDiagram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysMenu" EntityType="Self.SysMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysNotification" EntityType="Self.SysNotification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUser" EntityType="Self.SysUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUserAuth" EntityType="Self.SysUserAuth" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysUserSetting" EntityType="Self.SysUserSetting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SysView" EntityType="Self.SysView" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCode" EntityType="Self.UserCode" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebStaticFileErrorLog" EntityType="Self.WebStaticFileErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WpfResource" EntityType="Self.WpfResource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages_DefaultHub_0" EntityType="Self.Messages_DefaultHub_0" Schema="SignalR" store:Type="Tables" />
+          <EntitySet Name="Messages_DefaultHub_0_Id" EntityType="Self.Messages_DefaultHub_0_Id" Schema="SignalR" store:Type="Tables" />
+          <EntitySet Name="Schema" EntityType="Self.Schema" Schema="SignalR" store:Type="Tables" />
+          <EntitySet Name="CommonKeywordMap" EntityType="Self.CommonKeywordMap" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CommonKeywordMap].[KeywordId] AS [KeywordId], 
+    [CommonKeywordMap].[ObjectId] AS [ObjectId], 
+    [CommonKeywordMap].[IsCommonFile] AS [IsCommonFile], 
+    [CommonKeywordMap].[IsFileCategory] AS [IsFileCategory]
+    FROM [dbo].[CommonKeywordMap] AS [CommonKeywordMap]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FileCategory_bak" EntityType="Self.FileCategory_bak" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FileCategory_bak].[FileCategoryId] AS [FileCategoryId], 
+    [FileCategory_bak].[FileCategoryName] AS [FileCategoryName], 
+    [FileCategory_bak].[CreatedBy] AS [CreatedBy], 
+    [FileCategory_bak].[CreatedAt] AS [CreatedAt], 
+    [FileCategory_bak].[CreatedMenuId] AS [CreatedMenuId], 
+    [FileCategory_bak].[UpdatedBy] AS [UpdatedBy], 
+    [FileCategory_bak].[UpdatedAt] AS [UpdatedAt], 
+    [FileCategory_bak].[UpdatedMenuId] AS [UpdatedMenuId], 
+    [FileCategory_bak].[DeletedBy] AS [DeletedBy], 
+    [FileCategory_bak].[DeletedAt] AS [DeletedAt], 
+    [FileCategory_bak].[DeletedMenuId] AS [DeletedMenuId], 
+    [FileCategory_bak].[Depth] AS [Depth]
+    FROM [dbo].[FileCategory_bak] AS [FileCategory_bak]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Notification" EntityType="Self.Notification" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Notification].[NotificationId] AS [NotificationId], 
+    [Notification].[SysUserId] AS [SysUserId], 
+    [Notification].[NotificationType] AS [NotificationType], 
+    [Notification].[Parameter] AS [Parameter], 
+    [Notification].[IsRead] AS [IsRead], 
+    [Notification].[CreatedBy] AS [CreatedBy], 
+    [Notification].[CreatedAt] AS [CreatedAt], 
+    [Notification].[CreatedMenuId] AS [CreatedMenuId], 
+    [Notification].[UpdatedBy] AS [UpdatedBy], 
+    [Notification].[UpdatedAt] AS [UpdatedAt], 
+    [Notification].[UpdatedMenuId] AS [UpdatedMenuId], 
+    [Notification].[DeletedBy] AS [DeletedBy], 
+    [Notification].[DeletedAt] AS [DeletedAt], 
+    [Notification].[DeletedMenuId] AS [DeletedMenuId]
+    FROM [dbo].[Notification] AS [Notification]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SysAuthView" EntityType="Self.SysAuthView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SysAuthView].[AuthType] AS [AuthType], 
+    [SysAuthView].[WorkAuthCode] AS [WorkAuthCode], 
+    [SysAuthView].[MenuId] AS [MenuId], 
+    [SysAuthView].[MenuName] AS [MenuName], 
+    [SysAuthView].[SysUserId] AS [SysUserId], 
+    [SysAuthView].[AuthId] AS [AuthId], 
+    [SysAuthView].[SortOrder] AS [SortOrder], 
+    [SysAuthView].[ParentMenuId] AS [ParentMenuId], 
+    [SysAuthView].[MenuSortOrder] AS [MenuSortOrder], 
+    [SysAuthView].[UserDefinePermission] AS [UserDefinePermission], 
+    [SysAuthView].[ViewId] AS [ViewId]
+    FROM [dbo].[SysAuthView] AS [SysAuthView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_SignalRConnection_SignalRUser" Association="Self.FK_SignalRConnection_SignalRUser">
+            <End Role="SignalRUser" EntitySet="SignalRUser" />
+            <End Role="SignalRConnection" EntitySet="SignalRConnection" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MODECOMMONModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AnonymousMapEntity">
+          <Key>
+            <PropertyRef Name="AnonymousMapEntiryId" />
+          </Key>
+          <Property Name="AnonymousMapEntiryId" Type="Guid" Nullable="false" />
+          <Property Name="MappingSourceDomain" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MappingSourceEntity" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MappingSourceEntityDesc" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="MappedTargetDomain" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MappedTargetEntity" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MappedTargetEntityDesc" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="AnonymousMapDesc" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int16" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="CommonCode">
+          <Key>
+            <PropertyRef Name="CodeId" />
+          </Key>
+          <Property Name="CodeId" Type="Guid" Nullable="false" />
+          <Property Name="CodeValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ClientFriendlyCodeName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int16" Nullable="false" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AsisCategory" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="AsisCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="CommonCodeDetail">
+          <Key>
+            <PropertyRef Name="CodeDetailId" />
+          </Key>
+          <Property Name="CodeDetailId" Type="Guid" Nullable="false" />
+          <Property Name="CodeId" Type="Guid" Nullable="false" />
+          <Property Name="DetailSlot" Type="Int16" Nullable="false" />
+          <Property Name="DetailInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="CommonFile">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="Guid" Nullable="false" />
+          <Property Name="FileTypeCmnCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FileServerPath" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="FilePublicUrl" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="ContentsName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreationTypeCmnCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AsisInflowChannelNo" Type="Int32" />
+          <Property Name="InflowChannelId" Type="Guid" />
+          <Property Name="InflowChannelName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UseRangeCmnCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FileExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsEditable" Type="Boolean" Nullable="false" />
+          <Property Name="FileCategoryId" Type="Guid" />
+          <Property Name="FileRemark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="AdditionalInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="PLID" Type="Int32" />
+          <Property Name="FileTag" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CommonFileTimeline">
+          <Key>
+            <PropertyRef Name="FileTimelineId" />
+          </Key>
+          <Property Name="FileTimelineId" Type="Guid" Nullable="false" />
+          <Property Name="FileId" Type="Guid" Nullable="false" />
+          <Property Name="FileTypeCmnCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FileServerPath" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="FilePublicUrl" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="ContentsName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CreationTypeCmnCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AsisInflowChannelNo" Type="Int32" />
+          <Property Name="InflowChannelId" Type="Guid" />
+          <Property Name="InflowChannelName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UseRangeCmnCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FileExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsEditable" Type="Boolean" Nullable="false" />
+          <Property Name="FileCategoryId" Type="Guid" />
+          <Property Name="FileRemark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="AdditionalInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="FileTag" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FileSize" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CommonKeywordData">
+          <Key>
+            <PropertyRef Name="Keyword" />
+          </Key>
+          <Property Name="KeywordId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Keyword" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommonTranTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DDLHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EventType" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="PostTime" Type="DateTime" Precision="3" />
+          <Property Name="LoginName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="HostName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DatabaseName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="SchemaName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ObjectName" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ObjectType" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="CommandText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FileCategory">
+          <Key>
+            <PropertyRef Name="FileCategoryId" />
+          </Key>
+          <Property Name="FileCategoryId" Type="Guid" Nullable="false" />
+          <Property Name="FileCategoryName" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="Depth" Type="Int16" />
+        </EntityType>
+        <EntityType Name="SignalRConnection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppType" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConnectionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="SignalRUser" Relationship="Self.FK_SignalRConnection_SignalRUser" FromRole="SignalRConnection" ToRole="SignalRUser" />
+        </EntityType>
+        <EntityType Name="SignalRUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SignalRConnection" Relationship="Self.FK_SignalRConnection_SignalRUser" FromRole="SignalRUser" ToRole="SignalRConnection" />
+        </EntityType>
+        <EntityType Name="SysAccessSetting">
+          <Key>
+            <PropertyRef Name="AccessId" />
+          </Key>
+          <Property Name="AccessId" Type="Guid" Nullable="false" />
+          <Property Name="AccessTarget" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccessTargetId" Type="Guid" Nullable="false" />
+          <Property Name="AccessorType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccessorIds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysAuthority">
+          <Key>
+            <PropertyRef Name="AuthorityId" />
+          </Key>
+          <Property Name="AuthorityId" Type="Guid" Nullable="false" />
+          <Property Name="MenuId" Type="Guid" Nullable="false" />
+          <Property Name="AuthorityType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TargetId" Type="Guid" Nullable="false" />
+          <Property Name="UserDefined" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CanUse" Type="Boolean" Nullable="false" />
+          <Property Name="CanCreate" Type="Boolean" Nullable="false" />
+          <Property Name="CanDelete" Type="Boolean" Nullable="false" />
+          <Property Name="CanSave" Type="Boolean" Nullable="false" />
+          <Property Name="CanPdf" Type="Boolean" Nullable="false" />
+          <Property Name="CanExcel" Type="Boolean" Nullable="false" />
+          <Property Name="CanPrint" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysCode">
+          <Key>
+            <PropertyRef Name="SysCodeId" />
+          </Key>
+          <Property Name="SysCodeId" Type="Guid" Nullable="false" />
+          <Property Name="CodeCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int16" Nullable="false" />
+          <Property Name="ExtraInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysCodeHelper">
+          <Key>
+            <PropertyRef Name="CodeHelperId" />
+          </Key>
+          <Property Name="CodeHelperId" Type="Guid" Nullable="false" />
+          <Property Name="CodeHelperKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeHelperName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceDomain" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BizName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MethodName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Condition" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="UseName" Type="Boolean" />
+          <Property Name="NameHeaderText" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UseValue" Type="Boolean" />
+          <Property Name="ValueHeaderText" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UseValue2" Type="Boolean" />
+          <Property Name="Value2HeaderText" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UseValue3" Type="Boolean" />
+          <Property Name="Value3HeaderText" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UseDescription" Type="Boolean" />
+          <Property Name="SelectionMode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysDepartment">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+          </Key>
+          <Property Name="DepartmentId" Type="Guid" Nullable="false" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkDivisionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TicketingDepartment" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentRole" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WorkDivisionTypeEx" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AccountingPartner" Type="Int32" />
+          <Property Name="Division" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupLevel" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="GroupLeader" Type="Guid" />
+          <Property Name="GroupLeaderPosition" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="HrManager" Type="Guid" />
+          <Property Name="GroupDivision" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="GroupMission" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="GroupGoal" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IsRevenueDepartment" Type="Boolean" />
+          <Property Name="GroupRole" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysDiagram">
+          <Key>
+            <PropertyRef Name="DiagramId" />
+          </Key>
+          <Property Name="DiagramId" Type="Guid" Nullable="false" />
+          <Property Name="DiagramName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DiagramDescription" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="DiagramXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int16" Nullable="false" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiagramType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AppType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysMenu">
+          <Key>
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="MenuId" Type="Guid" Nullable="false" />
+          <Property Name="MenuLevel" Type="Int32" />
+          <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MenuType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParentMenuId" Type="Guid" />
+          <Property Name="SortOrder" Type="Int16" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonSize" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SubUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HelpUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="IsMobileUse" Type="Boolean" />
+          <Property Name="IsPopup" Type="Boolean" />
+          <Property Name="ViewId" Type="Guid" />
+          <Property Name="Parameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserDefinePermission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AppType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MenuDisplayType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="Company" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Factory" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SysNotification">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+          </Key>
+          <Property Name="NotificationId" Type="Guid" Nullable="false" />
+          <Property Name="SysUserId" Type="Guid" Nullable="false" />
+          <Property Name="NotificationType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Parameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsRead" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysUser">
+          <Key>
+            <PropertyRef Name="SysUserId" />
+          </Key>
+          <Property Name="SysUserId" Type="Guid" Nullable="false" />
+          <Property Name="UserType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EngName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsPinSetting" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="IsTest" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SysUserAuth">
+          <Key>
+            <PropertyRef Name="AuthId" />
+          </Key>
+          <Property Name="AuthId" Type="Guid" Nullable="false" />
+          <Property Name="MenuId" Type="Guid" Nullable="false" />
+          <Property Name="AuthType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WorkAuthCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="SysUserId" Type="Guid" />
+          <Property Name="UserDefined" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CanUse" Type="Boolean" Nullable="false" />
+          <Property Name="CanSearch" Type="Boolean" Nullable="false" />
+          <Property Name="CanCreate" Type="Boolean" Nullable="false" />
+          <Property Name="CanDelete" Type="Boolean" Nullable="false" />
+          <Property Name="CanSave" Type="Boolean" Nullable="false" />
+          <Property Name="CanReset" Type="Boolean" Nullable="false" />
+          <Property Name="CanPdf" Type="Boolean" Nullable="false" />
+          <Property Name="CanExcel" Type="Boolean" Nullable="false" />
+          <Property Name="CanPrint" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysUserSetting">
+          <Key>
+            <PropertyRef Name="SettingId" />
+          </Key>
+          <Property Name="SettingId" Type="Guid" Nullable="false" />
+          <Property Name="SysUserId" Type="Guid" Nullable="false" />
+          <Property Name="SettingType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommonId" Type="Guid" />
+          <Property Name="Parameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysView">
+          <Key>
+            <PropertyRef Name="ViewId" />
+          </Key>
+          <Property Name="ViewId" Type="Guid" Nullable="false" />
+          <Property Name="AppModule" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ViewName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ViewDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="ViewType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ViewCategoryType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AppType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ClassName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserCode">
+          <Key>
+            <PropertyRef Name="UserCodeId" />
+          </Key>
+          <Property Name="UserCodeId" Type="Guid" Nullable="false" />
+          <Property Name="CodeCategory" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeValue" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodeDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="ClientFriendlyCodeName" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int16" Nullable="false" />
+          <Property Name="Info01" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info02" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info03" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info04" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info05" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info06" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info07" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info08" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info09" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info11" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info12" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info13" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info14" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info15" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info16" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info17" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info18" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info19" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info20" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info21" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info22" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info23" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info24" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info25" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info26" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info27" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info28" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info29" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info30" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info31" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info32" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info33" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info34" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info35" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info36" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info37" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info38" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info39" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info40" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info41" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info42" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info43" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info44" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info45" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info46" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info47" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info48" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info49" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info50" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info51" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info52" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info53" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info54" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info55" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info56" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info57" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info58" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info59" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info60" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info61" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info62" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info63" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info65" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info66" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info67" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info68" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info69" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info70" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info71" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info72" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info73" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info74" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info75" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info76" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info77" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info78" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info79" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info80" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info81" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info82" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info83" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info84" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info85" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info86" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info87" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info88" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info89" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info90" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info91" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info92" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info93" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info94" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info95" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info96" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info97" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info98" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Info99" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="WebStaticFileErrorLog">
+          <Key>
+            <PropertyRef Name="WebStaticFileErrorLogId" />
+          </Key>
+          <Property Name="WebStaticFileErrorLogId" Type="Guid" Nullable="false" />
+          <Property Name="BizType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BizMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Solved" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="WpfResource">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+          </Key>
+          <Property Name="ResourceId" Type="Guid" Nullable="false" />
+          <Property Name="ResourceBoundary" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageKey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KorValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EngValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsUse" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Messages_DefaultHub_0">
+          <Key>
+            <PropertyRef Name="PayloadId" />
+          </Key>
+          <Property Name="PayloadId" Type="Int64" Nullable="false" />
+          <Property Name="Payload" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="InsertedOn" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Messages_DefaultHub_0_Id">
+          <Key>
+            <PropertyRef Name="PayloadId" />
+          </Key>
+          <Property Name="PayloadId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="SchemaVersion" />
+          </Key>
+          <Property Name="SchemaVersion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommonKeywordMap">
+          <Key>
+            <PropertyRef Name="KeywordId" />
+            <PropertyRef Name="ObjectId" />
+            <PropertyRef Name="IsCommonFile" />
+            <PropertyRef Name="IsFileCategory" />
+          </Key>
+          <Property Name="KeywordId" Type="Int32" Nullable="false" />
+          <Property Name="ObjectId" Type="Guid" Nullable="false" />
+          <Property Name="IsCommonFile" Type="Boolean" Nullable="false" />
+          <Property Name="IsFileCategory" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FileCategory_bak">
+          <Key>
+            <PropertyRef Name="FileCategoryId" />
+            <PropertyRef Name="FileCategoryName" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedAt" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedAt" />
+          </Key>
+          <Property Name="FileCategoryId" Type="Guid" Nullable="false" />
+          <Property Name="FileCategoryName" Type="String" MaxLength="450" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+          <Property Name="Depth" Type="Int16" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+            <PropertyRef Name="SysUserId" />
+            <PropertyRef Name="NotificationType" />
+            <PropertyRef Name="Parameter" />
+            <PropertyRef Name="IsRead" />
+            <PropertyRef Name="CreatedBy" />
+            <PropertyRef Name="CreatedAt" />
+            <PropertyRef Name="UpdatedBy" />
+            <PropertyRef Name="UpdatedAt" />
+          </Key>
+          <Property Name="NotificationId" Type="Guid" Nullable="false" />
+          <Property Name="SysUserId" Type="Guid" Nullable="false" />
+          <Property Name="NotificationType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Parameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsRead" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="CreatedMenuId" Type="Guid" />
+          <Property Name="UpdatedBy" Type="Guid" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedMenuId" Type="Guid" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="DeletedAt" Type="DateTime" Precision="7" />
+          <Property Name="DeletedMenuId" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SysAuthView">
+          <Key>
+            <PropertyRef Name="AuthType" />
+            <PropertyRef Name="MenuId" />
+            <PropertyRef Name="MenuSortOrder" />
+          </Key>
+          <Property Name="AuthType" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WorkAuthCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="MenuId" Type="Guid" Nullable="false" />
+          <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SysUserId" Type="Guid" />
+          <Property Name="AuthId" Type="Guid" />
+          <Property Name="SortOrder" Type="Int16" />
+          <Property Name="ParentMenuId" Type="Guid" />
+          <Property Name="MenuSortOrder" Type="Int16" Nullable="false" />
+          <Property Name="UserDefinePermission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ViewId" Type="Guid" />
+        </EntityType>
+        <Association Name="FK_SignalRConnection_SignalRUser">
+          <End Role="SignalRUser" Type="Self.SignalRUser" Multiplicity="1" />
+          <End Role="SignalRConnection" Type="Self.SignalRConnection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignalRUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SignalRConnection">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MODECOMMONEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnonymousMapEntity" EntityType="Self.AnonymousMapEntity" />
+          <EntitySet Name="CommonCode" EntityType="Self.CommonCode" />
+          <EntitySet Name="CommonCodeDetail" EntityType="Self.CommonCodeDetail" />
+          <EntitySet Name="CommonFile" EntityType="Self.CommonFile" />
+          <EntitySet Name="CommonFileTimeline" EntityType="Self.CommonFileTimeline" />
+          <EntitySet Name="CommonKeywordData" EntityType="Self.CommonKeywordData" />
+          <EntitySet Name="CommonTranTest" EntityType="Self.CommonTranTest" />
+          <EntitySet Name="DDLHistory" EntityType="Self.DDLHistory" />
+          <EntitySet Name="FileCategory" EntityType="Self.FileCategory" />
+          <EntitySet Name="SignalRConnection" EntityType="Self.SignalRConnection" />
+          <EntitySet Name="SignalRUser" EntityType="Self.SignalRUser" />
+          <EntitySet Name="SysAccessSetting" EntityType="Self.SysAccessSetting" />
+          <EntitySet Name="SysAuthority" EntityType="Self.SysAuthority" />
+          <EntitySet Name="SysCode" EntityType="Self.SysCode" />
+          <EntitySet Name="SysCodeHelper" EntityType="Self.SysCodeHelper" />
+          <EntitySet Name="SysDepartment" EntityType="Self.SysDepartment" />
+          <EntitySet Name="SysDiagram" EntityType="Self.SysDiagram" />
+          <EntitySet Name="SysMenu" EntityType="Self.SysMenu" />
+          <EntitySet Name="SysNotification" EntityType="Self.SysNotification" />
+          <EntitySet Name="SysUser" EntityType="Self.SysUser" />
+          <EntitySet Name="SysUserAuth" EntityType="Self.SysUserAuth" />
+          <EntitySet Name="SysUserSetting" EntityType="Self.SysUserSetting" />
+          <EntitySet Name="SysView" EntityType="Self.SysView" />
+          <EntitySet Name="UserCode" EntityType="Self.UserCode" />
+          <EntitySet Name="WebStaticFileErrorLog" EntityType="Self.WebStaticFileErrorLog" />
+          <EntitySet Name="WpfResource" EntityType="Self.WpfResource" />
+          <EntitySet Name="Messages_DefaultHub_0" EntityType="Self.Messages_DefaultHub_0" />
+          <EntitySet Name="Messages_DefaultHub_0_Id" EntityType="Self.Messages_DefaultHub_0_Id" />
+          <EntitySet Name="Schema" EntityType="Self.Schema" />
+          <EntitySet Name="CommonKeywordMap" EntityType="Self.CommonKeywordMap" />
+          <EntitySet Name="FileCategory_bak" EntityType="Self.FileCategory_bak" />
+          <EntitySet Name="Notification" EntityType="Self.Notification" />
+          <EntitySet Name="SysAuthView" EntityType="Self.SysAuthView" />
+          <AssociationSet Name="FK_SignalRConnection_SignalRUser" Association="Self.FK_SignalRConnection_SignalRUser">
+            <End Role="SignalRUser" EntitySet="SignalRUser" />
+            <End Role="SignalRConnection" EntitySet="SignalRConnection" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MODECOMMONModelStoreContainer" CdmEntityContainer="MODECOMMONEntities">
+          <EntitySetMapping Name="AnonymousMapEntity">
+            <EntityTypeMapping TypeName="MODECOMMONModel.AnonymousMapEntity">
+              <MappingFragment StoreEntitySet="AnonymousMapEntity">
+                <ScalarProperty Name="AnonymousMapEntiryId" ColumnName="AnonymousMapEntiryId" />
+                <ScalarProperty Name="MappingSourceDomain" ColumnName="MappingSourceDomain" />
+                <ScalarProperty Name="MappingSourceEntity" ColumnName="MappingSourceEntity" />
+                <ScalarProperty Name="MappingSourceEntityDesc" ColumnName="MappingSourceEntityDesc" />
+                <ScalarProperty Name="MappedTargetDomain" ColumnName="MappedTargetDomain" />
+                <ScalarProperty Name="MappedTargetEntity" ColumnName="MappedTargetEntity" />
+                <ScalarProperty Name="MappedTargetEntityDesc" ColumnName="MappedTargetEntityDesc" />
+                <ScalarProperty Name="AnonymousMapDesc" ColumnName="AnonymousMapDesc" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonCode">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonCode">
+              <MappingFragment StoreEntitySet="CommonCode">
+                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+                <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="CodeDesc" ColumnName="CodeDesc" />
+                <ScalarProperty Name="ClientFriendlyCodeName" ColumnName="ClientFriendlyCodeName" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="AsisCategory" ColumnName="AsisCategory" />
+                <ScalarProperty Name="AsisCode" ColumnName="AsisCode" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonCodeDetail">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonCodeDetail">
+              <MappingFragment StoreEntitySet="CommonCodeDetail">
+                <ScalarProperty Name="CodeDetailId" ColumnName="CodeDetailId" />
+                <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+                <ScalarProperty Name="DetailSlot" ColumnName="DetailSlot" />
+                <ScalarProperty Name="DetailInfo" ColumnName="DetailInfo" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonFile">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonFile">
+              <MappingFragment StoreEntitySet="CommonFile">
+                <ScalarProperty Name="FileId" ColumnName="FileId" />
+                <ScalarProperty Name="FileTypeCmnCode" ColumnName="FileTypeCmnCode" />
+                <ScalarProperty Name="FileServerPath" ColumnName="FileServerPath" />
+                <ScalarProperty Name="FilePublicUrl" ColumnName="FilePublicUrl" />
+                <ScalarProperty Name="ContentsName" ColumnName="ContentsName" />
+                <ScalarProperty Name="CreationTypeCmnCode" ColumnName="CreationTypeCmnCode" />
+                <ScalarProperty Name="AsisInflowChannelNo" ColumnName="AsisInflowChannelNo" />
+                <ScalarProperty Name="InflowChannelId" ColumnName="InflowChannelId" />
+                <ScalarProperty Name="InflowChannelName" ColumnName="InflowChannelName" />
+                <ScalarProperty Name="UseRangeCmnCode" ColumnName="UseRangeCmnCode" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+                <ScalarProperty Name="IsEditable" ColumnName="IsEditable" />
+                <ScalarProperty Name="FileCategoryId" ColumnName="FileCategoryId" />
+                <ScalarProperty Name="FileRemark" ColumnName="FileRemark" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="AdditionalInfo" ColumnName="AdditionalInfo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="PLID" ColumnName="PLID" />
+                <ScalarProperty Name="FileTag" ColumnName="FileTag" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonFileTimeline">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonFileTimeline">
+              <MappingFragment StoreEntitySet="CommonFileTimeline">
+                <ScalarProperty Name="FileTimelineId" ColumnName="FileTimelineId" />
+                <ScalarProperty Name="FileId" ColumnName="FileId" />
+                <ScalarProperty Name="FileTypeCmnCode" ColumnName="FileTypeCmnCode" />
+                <ScalarProperty Name="FileServerPath" ColumnName="FileServerPath" />
+                <ScalarProperty Name="FilePublicUrl" ColumnName="FilePublicUrl" />
+                <ScalarProperty Name="ContentsName" ColumnName="ContentsName" />
+                <ScalarProperty Name="CreationTypeCmnCode" ColumnName="CreationTypeCmnCode" />
+                <ScalarProperty Name="AsisInflowChannelNo" ColumnName="AsisInflowChannelNo" />
+                <ScalarProperty Name="InflowChannelId" ColumnName="InflowChannelId" />
+                <ScalarProperty Name="InflowChannelName" ColumnName="InflowChannelName" />
+                <ScalarProperty Name="UseRangeCmnCode" ColumnName="UseRangeCmnCode" />
+                <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+                <ScalarProperty Name="IsEditable" ColumnName="IsEditable" />
+                <ScalarProperty Name="FileCategoryId" ColumnName="FileCategoryId" />
+                <ScalarProperty Name="FileRemark" ColumnName="FileRemark" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="AdditionalInfo" ColumnName="AdditionalInfo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="FileTag" ColumnName="FileTag" />
+                <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonKeywordData">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonKeywordData">
+              <MappingFragment StoreEntitySet="CommonKeywordData">
+                <ScalarProperty Name="KeywordId" ColumnName="KeywordId" />
+                <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonTranTest">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonTranTest">
+              <MappingFragment StoreEntitySet="CommonTranTest">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Desc" ColumnName="Desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DDLHistory">
+            <EntityTypeMapping TypeName="MODECOMMONModel.DDLHistory">
+              <MappingFragment StoreEntitySet="DDLHistory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EventType" ColumnName="EventType" />
+                <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="HostName" ColumnName="HostName" />
+                <ScalarProperty Name="DatabaseName" ColumnName="DatabaseName" />
+                <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+                <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="CommandText" ColumnName="CommandText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FileCategory">
+            <EntityTypeMapping TypeName="MODECOMMONModel.FileCategory">
+              <MappingFragment StoreEntitySet="FileCategory">
+                <ScalarProperty Name="FileCategoryId" ColumnName="FileCategoryId" />
+                <ScalarProperty Name="FileCategoryName" ColumnName="FileCategoryName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignalRConnection">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SignalRConnection">
+              <MappingFragment StoreEntitySet="SignalRConnection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ConnectionId" ColumnName="ConnectionId" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignalRUser">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SignalRUser">
+              <MappingFragment StoreEntitySet="SignalRUser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysAccessSetting">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysAccessSetting">
+              <MappingFragment StoreEntitySet="SysAccessSetting">
+                <ScalarProperty Name="AccessId" ColumnName="AccessId" />
+                <ScalarProperty Name="AccessTarget" ColumnName="AccessTarget" />
+                <ScalarProperty Name="AccessTargetId" ColumnName="AccessTargetId" />
+                <ScalarProperty Name="AccessorType" ColumnName="AccessorType" />
+                <ScalarProperty Name="AccessorIds" ColumnName="AccessorIds" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysAuthority">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysAuthority">
+              <MappingFragment StoreEntitySet="SysAuthority">
+                <ScalarProperty Name="AuthorityId" ColumnName="AuthorityId" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="AuthorityType" ColumnName="AuthorityType" />
+                <ScalarProperty Name="TargetId" ColumnName="TargetId" />
+                <ScalarProperty Name="UserDefined" ColumnName="UserDefined" />
+                <ScalarProperty Name="CanUse" ColumnName="CanUse" />
+                <ScalarProperty Name="CanCreate" ColumnName="CanCreate" />
+                <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+                <ScalarProperty Name="CanSave" ColumnName="CanSave" />
+                <ScalarProperty Name="CanPdf" ColumnName="CanPdf" />
+                <ScalarProperty Name="CanExcel" ColumnName="CanExcel" />
+                <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysCode">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysCode">
+              <MappingFragment StoreEntitySet="SysCode">
+                <ScalarProperty Name="SysCodeId" ColumnName="SysCodeId" />
+                <ScalarProperty Name="CodeCategory" ColumnName="CodeCategory" />
+                <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="CodeDesc" ColumnName="CodeDesc" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ExtraInfo" ColumnName="ExtraInfo" />
+                <ScalarProperty Name="CodeRemark" ColumnName="CodeRemark" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysCodeHelper">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysCodeHelper">
+              <MappingFragment StoreEntitySet="SysCodeHelper">
+                <ScalarProperty Name="CodeHelperId" ColumnName="CodeHelperId" />
+                <ScalarProperty Name="CodeHelperKey" ColumnName="CodeHelperKey" />
+                <ScalarProperty Name="CodeHelperName" ColumnName="CodeHelperName" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="ServiceDomain" ColumnName="ServiceDomain" />
+                <ScalarProperty Name="BizName" ColumnName="BizName" />
+                <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="UseName" ColumnName="UseName" />
+                <ScalarProperty Name="NameHeaderText" ColumnName="NameHeaderText" />
+                <ScalarProperty Name="UseValue" ColumnName="UseValue" />
+                <ScalarProperty Name="ValueHeaderText" ColumnName="ValueHeaderText" />
+                <ScalarProperty Name="UseValue2" ColumnName="UseValue2" />
+                <ScalarProperty Name="Value2HeaderText" ColumnName="Value2HeaderText" />
+                <ScalarProperty Name="UseValue3" ColumnName="UseValue3" />
+                <ScalarProperty Name="Value3HeaderText" ColumnName="Value3HeaderText" />
+                <ScalarProperty Name="UseDescription" ColumnName="UseDescription" />
+                <ScalarProperty Name="SelectionMode" ColumnName="SelectionMode" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysDepartment">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysDepartment">
+              <MappingFragment StoreEntitySet="SysDepartment">
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="WorkDivisionType" ColumnName="WorkDivisionType" />
+                <ScalarProperty Name="TicketingDepartment" ColumnName="TicketingDepartment" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="DepartmentRole" ColumnName="DepartmentRole" />
+                <ScalarProperty Name="WorkDivisionTypeEx" ColumnName="WorkDivisionTypeEx" />
+                <ScalarProperty Name="AccountingPartner" ColumnName="AccountingPartner" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="GroupLevel" ColumnName="GroupLevel" />
+                <ScalarProperty Name="GroupLeader" ColumnName="GroupLeader" />
+                <ScalarProperty Name="GroupLeaderPosition" ColumnName="GroupLeaderPosition" />
+                <ScalarProperty Name="HrManager" ColumnName="HrManager" />
+                <ScalarProperty Name="GroupDivision" ColumnName="GroupDivision" />
+                <ScalarProperty Name="GroupMission" ColumnName="GroupMission" />
+                <ScalarProperty Name="GroupGoal" ColumnName="GroupGoal" />
+                <ScalarProperty Name="IsRevenueDepartment" ColumnName="IsRevenueDepartment" />
+                <ScalarProperty Name="GroupRole" ColumnName="GroupRole" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysDiagram">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysDiagram">
+              <MappingFragment StoreEntitySet="SysDiagram">
+                <ScalarProperty Name="DiagramId" ColumnName="DiagramId" />
+                <ScalarProperty Name="DiagramName" ColumnName="DiagramName" />
+                <ScalarProperty Name="DiagramDescription" ColumnName="DiagramDescription" />
+                <ScalarProperty Name="DiagramXml" ColumnName="DiagramXml" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="DiagramType" ColumnName="DiagramType" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysMenu">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysMenu">
+              <MappingFragment StoreEntitySet="SysMenu">
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="MenuLevel" ColumnName="MenuLevel" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="MenuType" ColumnName="MenuType" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="ParentMenuId" ColumnName="ParentMenuId" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="ButtonSize" ColumnName="ButtonSize" />
+                <ScalarProperty Name="SubUrl" ColumnName="SubUrl" />
+                <ScalarProperty Name="HelpUrl" ColumnName="HelpUrl" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="IsMobileUse" ColumnName="IsMobileUse" />
+                <ScalarProperty Name="IsPopup" ColumnName="IsPopup" />
+                <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="UserDefinePermission" ColumnName="UserDefinePermission" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+                <ScalarProperty Name="MenuDisplayType" ColumnName="MenuDisplayType" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Factory" ColumnName="Factory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysNotification">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysNotification">
+              <MappingFragment StoreEntitySet="SysNotification">
+                <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+                <ScalarProperty Name="SysUserId" ColumnName="SysUserId" />
+                <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUser">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysUser">
+              <MappingFragment StoreEntitySet="SysUser">
+                <ScalarProperty Name="SysUserId" ColumnName="SysUserId" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="KorName" ColumnName="KorName" />
+                <ScalarProperty Name="EngName" ColumnName="EngName" />
+                <ScalarProperty Name="IsPinSetting" ColumnName="IsPinSetting" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="IsTest" ColumnName="IsTest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUserAuth">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysUserAuth">
+              <MappingFragment StoreEntitySet="SysUserAuth">
+                <ScalarProperty Name="AuthId" ColumnName="AuthId" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="AuthType" ColumnName="AuthType" />
+                <ScalarProperty Name="WorkAuthCode" ColumnName="WorkAuthCode" />
+                <ScalarProperty Name="SysUserId" ColumnName="SysUserId" />
+                <ScalarProperty Name="UserDefined" ColumnName="UserDefined" />
+                <ScalarProperty Name="CanUse" ColumnName="CanUse" />
+                <ScalarProperty Name="CanSearch" ColumnName="CanSearch" />
+                <ScalarProperty Name="CanCreate" ColumnName="CanCreate" />
+                <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+                <ScalarProperty Name="CanSave" ColumnName="CanSave" />
+                <ScalarProperty Name="CanReset" ColumnName="CanReset" />
+                <ScalarProperty Name="CanPdf" ColumnName="CanPdf" />
+                <ScalarProperty Name="CanExcel" ColumnName="CanExcel" />
+                <ScalarProperty Name="CanPrint" ColumnName="CanPrint" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysUserSetting">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysUserSetting">
+              <MappingFragment StoreEntitySet="SysUserSetting">
+                <ScalarProperty Name="SettingId" ColumnName="SettingId" />
+                <ScalarProperty Name="SysUserId" ColumnName="SysUserId" />
+                <ScalarProperty Name="SettingType" ColumnName="SettingType" />
+                <ScalarProperty Name="CommonId" ColumnName="CommonId" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysView">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysView">
+              <MappingFragment StoreEntitySet="SysView">
+                <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+                <ScalarProperty Name="AppModule" ColumnName="AppModule" />
+                <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+                <ScalarProperty Name="ViewDesc" ColumnName="ViewDesc" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="ViewType" ColumnName="ViewType" />
+                <ScalarProperty Name="ViewCategoryType" ColumnName="ViewCategoryType" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserCode">
+            <EntityTypeMapping TypeName="MODECOMMONModel.UserCode">
+              <MappingFragment StoreEntitySet="UserCode">
+                <ScalarProperty Name="UserCodeId" ColumnName="UserCodeId" />
+                <ScalarProperty Name="CodeCategory" ColumnName="CodeCategory" />
+                <ScalarProperty Name="CodeValue" ColumnName="CodeValue" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="CodeDesc" ColumnName="CodeDesc" />
+                <ScalarProperty Name="ClientFriendlyCodeName" ColumnName="ClientFriendlyCodeName" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="Info01" ColumnName="Info01" />
+                <ScalarProperty Name="Info02" ColumnName="Info02" />
+                <ScalarProperty Name="Info03" ColumnName="Info03" />
+                <ScalarProperty Name="Info04" ColumnName="Info04" />
+                <ScalarProperty Name="Info05" ColumnName="Info05" />
+                <ScalarProperty Name="Info06" ColumnName="Info06" />
+                <ScalarProperty Name="Info07" ColumnName="Info07" />
+                <ScalarProperty Name="Info08" ColumnName="Info08" />
+                <ScalarProperty Name="Info09" ColumnName="Info09" />
+                <ScalarProperty Name="Info10" ColumnName="Info10" />
+                <ScalarProperty Name="Info11" ColumnName="Info11" />
+                <ScalarProperty Name="Info12" ColumnName="Info12" />
+                <ScalarProperty Name="Info13" ColumnName="Info13" />
+                <ScalarProperty Name="Info14" ColumnName="Info14" />
+                <ScalarProperty Name="Info15" ColumnName="Info15" />
+                <ScalarProperty Name="Info16" ColumnName="Info16" />
+                <ScalarProperty Name="Info17" ColumnName="Info17" />
+                <ScalarProperty Name="Info18" ColumnName="Info18" />
+                <ScalarProperty Name="Info19" ColumnName="Info19" />
+                <ScalarProperty Name="Info20" ColumnName="Info20" />
+                <ScalarProperty Name="Info21" ColumnName="Info21" />
+                <ScalarProperty Name="Info22" ColumnName="Info22" />
+                <ScalarProperty Name="Info23" ColumnName="Info23" />
+                <ScalarProperty Name="Info24" ColumnName="Info24" />
+                <ScalarProperty Name="Info25" ColumnName="Info25" />
+                <ScalarProperty Name="Info26" ColumnName="Info26" />
+                <ScalarProperty Name="Info27" ColumnName="Info27" />
+                <ScalarProperty Name="Info28" ColumnName="Info28" />
+                <ScalarProperty Name="Info29" ColumnName="Info29" />
+                <ScalarProperty Name="Info30" ColumnName="Info30" />
+                <ScalarProperty Name="Info31" ColumnName="Info31" />
+                <ScalarProperty Name="Info32" ColumnName="Info32" />
+                <ScalarProperty Name="Info33" ColumnName="Info33" />
+                <ScalarProperty Name="Info34" ColumnName="Info34" />
+                <ScalarProperty Name="Info35" ColumnName="Info35" />
+                <ScalarProperty Name="Info36" ColumnName="Info36" />
+                <ScalarProperty Name="Info37" ColumnName="Info37" />
+                <ScalarProperty Name="Info38" ColumnName="Info38" />
+                <ScalarProperty Name="Info39" ColumnName="Info39" />
+                <ScalarProperty Name="Info40" ColumnName="Info40" />
+                <ScalarProperty Name="Info41" ColumnName="Info41" />
+                <ScalarProperty Name="Info42" ColumnName="Info42" />
+                <ScalarProperty Name="Info43" ColumnName="Info43" />
+                <ScalarProperty Name="Info44" ColumnName="Info44" />
+                <ScalarProperty Name="Info45" ColumnName="Info45" />
+                <ScalarProperty Name="Info46" ColumnName="Info46" />
+                <ScalarProperty Name="Info47" ColumnName="Info47" />
+                <ScalarProperty Name="Info48" ColumnName="Info48" />
+                <ScalarProperty Name="Info49" ColumnName="Info49" />
+                <ScalarProperty Name="Info50" ColumnName="Info50" />
+                <ScalarProperty Name="Info51" ColumnName="Info51" />
+                <ScalarProperty Name="Info52" ColumnName="Info52" />
+                <ScalarProperty Name="Info53" ColumnName="Info53" />
+                <ScalarProperty Name="Info54" ColumnName="Info54" />
+                <ScalarProperty Name="Info55" ColumnName="Info55" />
+                <ScalarProperty Name="Info56" ColumnName="Info56" />
+                <ScalarProperty Name="Info57" ColumnName="Info57" />
+                <ScalarProperty Name="Info58" ColumnName="Info58" />
+                <ScalarProperty Name="Info59" ColumnName="Info59" />
+                <ScalarProperty Name="Info60" ColumnName="Info60" />
+                <ScalarProperty Name="Info61" ColumnName="Info61" />
+                <ScalarProperty Name="Info62" ColumnName="Info62" />
+                <ScalarProperty Name="Info63" ColumnName="Info63" />
+                <ScalarProperty Name="Info64" ColumnName="Info64" />
+                <ScalarProperty Name="Info65" ColumnName="Info65" />
+                <ScalarProperty Name="Info66" ColumnName="Info66" />
+                <ScalarProperty Name="Info67" ColumnName="Info67" />
+                <ScalarProperty Name="Info68" ColumnName="Info68" />
+                <ScalarProperty Name="Info69" ColumnName="Info69" />
+                <ScalarProperty Name="Info70" ColumnName="Info70" />
+                <ScalarProperty Name="Info71" ColumnName="Info71" />
+                <ScalarProperty Name="Info72" ColumnName="Info72" />
+                <ScalarProperty Name="Info73" ColumnName="Info73" />
+                <ScalarProperty Name="Info74" ColumnName="Info74" />
+                <ScalarProperty Name="Info75" ColumnName="Info75" />
+                <ScalarProperty Name="Info76" ColumnName="Info76" />
+                <ScalarProperty Name="Info77" ColumnName="Info77" />
+                <ScalarProperty Name="Info78" ColumnName="Info78" />
+                <ScalarProperty Name="Info79" ColumnName="Info79" />
+                <ScalarProperty Name="Info80" ColumnName="Info80" />
+                <ScalarProperty Name="Info81" ColumnName="Info81" />
+                <ScalarProperty Name="Info82" ColumnName="Info82" />
+                <ScalarProperty Name="Info83" ColumnName="Info83" />
+                <ScalarProperty Name="Info84" ColumnName="Info84" />
+                <ScalarProperty Name="Info85" ColumnName="Info85" />
+                <ScalarProperty Name="Info86" ColumnName="Info86" />
+                <ScalarProperty Name="Info87" ColumnName="Info87" />
+                <ScalarProperty Name="Info88" ColumnName="Info88" />
+                <ScalarProperty Name="Info89" ColumnName="Info89" />
+                <ScalarProperty Name="Info90" ColumnName="Info90" />
+                <ScalarProperty Name="Info91" ColumnName="Info91" />
+                <ScalarProperty Name="Info92" ColumnName="Info92" />
+                <ScalarProperty Name="Info93" ColumnName="Info93" />
+                <ScalarProperty Name="Info94" ColumnName="Info94" />
+                <ScalarProperty Name="Info95" ColumnName="Info95" />
+                <ScalarProperty Name="Info96" ColumnName="Info96" />
+                <ScalarProperty Name="Info97" ColumnName="Info97" />
+                <ScalarProperty Name="Info98" ColumnName="Info98" />
+                <ScalarProperty Name="Info99" ColumnName="Info99" />
+                <ScalarProperty Name="ExtraInfo" ColumnName="ExtraInfo" />
+                <ScalarProperty Name="CodeRemark" ColumnName="CodeRemark" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebStaticFileErrorLog">
+            <EntityTypeMapping TypeName="MODECOMMONModel.WebStaticFileErrorLog">
+              <MappingFragment StoreEntitySet="WebStaticFileErrorLog">
+                <ScalarProperty Name="WebStaticFileErrorLogId" ColumnName="WebStaticFileErrorLogId" />
+                <ScalarProperty Name="BizType" ColumnName="BizType" />
+                <ScalarProperty Name="BizMethod" ColumnName="BizMethod" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="Solved" ColumnName="Solved" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WpfResource">
+            <EntityTypeMapping TypeName="MODECOMMONModel.WpfResource">
+              <MappingFragment StoreEntitySet="WpfResource">
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+                <ScalarProperty Name="ResourceBoundary" ColumnName="ResourceBoundary" />
+                <ScalarProperty Name="LanguageKey" ColumnName="LanguageKey" />
+                <ScalarProperty Name="KorValue" ColumnName="KorValue" />
+                <ScalarProperty Name="EngValue" ColumnName="EngValue" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages_DefaultHub_0">
+            <EntityTypeMapping TypeName="MODECOMMONModel.Messages_DefaultHub_0">
+              <MappingFragment StoreEntitySet="Messages_DefaultHub_0">
+                <ScalarProperty Name="PayloadId" ColumnName="PayloadId" />
+                <ScalarProperty Name="Payload" ColumnName="Payload" />
+                <ScalarProperty Name="InsertedOn" ColumnName="InsertedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages_DefaultHub_0_Id">
+            <EntityTypeMapping TypeName="MODECOMMONModel.Messages_DefaultHub_0_Id">
+              <MappingFragment StoreEntitySet="Messages_DefaultHub_0_Id">
+                <ScalarProperty Name="PayloadId" ColumnName="PayloadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schema">
+            <EntityTypeMapping TypeName="MODECOMMONModel.Schema">
+              <MappingFragment StoreEntitySet="Schema">
+                <ScalarProperty Name="SchemaVersion" ColumnName="SchemaVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonKeywordMap">
+            <EntityTypeMapping TypeName="MODECOMMONModel.CommonKeywordMap">
+              <MappingFragment StoreEntitySet="CommonKeywordMap">
+                <ScalarProperty Name="KeywordId" ColumnName="KeywordId" />
+                <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+                <ScalarProperty Name="IsCommonFile" ColumnName="IsCommonFile" />
+                <ScalarProperty Name="IsFileCategory" ColumnName="IsFileCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FileCategory_bak">
+            <EntityTypeMapping TypeName="MODECOMMONModel.FileCategory_bak">
+              <MappingFragment StoreEntitySet="FileCategory_bak">
+                <ScalarProperty Name="FileCategoryId" ColumnName="FileCategoryId" />
+                <ScalarProperty Name="FileCategoryName" ColumnName="FileCategoryName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notification">
+            <EntityTypeMapping TypeName="MODECOMMONModel.Notification">
+              <MappingFragment StoreEntitySet="Notification">
+                <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+                <ScalarProperty Name="SysUserId" ColumnName="SysUserId" />
+                <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+                <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="CreatedMenuId" ColumnName="CreatedMenuId" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UpdatedMenuId" ColumnName="UpdatedMenuId" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedAt" ColumnName="DeletedAt" />
+                <ScalarProperty Name="DeletedMenuId" ColumnName="DeletedMenuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysAuthView">
+            <EntityTypeMapping TypeName="MODECOMMONModel.SysAuthView">
+              <MappingFragment StoreEntitySet="SysAuthView">
+                <ScalarProperty Name="AuthType" ColumnName="AuthType" />
+                <ScalarProperty Name="WorkAuthCode" ColumnName="WorkAuthCode" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+                <ScalarProperty Name="SysUserId" ColumnName="SysUserId" />
+                <ScalarProperty Name="AuthId" ColumnName="AuthId" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ParentMenuId" ColumnName="ParentMenuId" />
+                <ScalarProperty Name="MenuSortOrder" ColumnName="MenuSortOrder" />
+                <ScalarProperty Name="UserDefinePermission" ColumnName="UserDefinePermission" />
+                <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="없음" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

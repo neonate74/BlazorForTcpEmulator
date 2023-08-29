@@ -1,5 +1,6 @@
 ﻿@page "/counter"
 @using MauiBlazorApp.Services;
+@using Microsoft.Data.SqlClient;
 
 <h1>Connection Counter</h1>
 
@@ -7,7 +8,7 @@
 
 @* <button class="btn btn-primary" @onclick="IncrementCount">Click me</button> *@
 
-<textarea style="margin-top: 10px; border: 1px solid gray; width: 90%;" rows="10">@logString</textarea>
+<textarea style="margin-top: 10px; border: 1px solid gray; width: 90%;" rows="20">@logString</textarea>
 
 @code {
     private int currentCount = 0;
@@ -21,9 +22,32 @@
         currentCount++;
     }
 
+    public class Code
+    {
+        public string CodeName { get; set; }
+    }
+
     protected override async Task OnInitializedAsync()
     {
-        string aaa = App.GetConfigSectionValue("KeyOne");
+        string modeCommon = App.GetConfigSectionValue("MODECOMMON_ConnectionString");
+
+        using (MODECOMMON.MODECOMMONEntities entities = new MODECOMMON.MODECOMMONEntities())
+        {
+            try
+            {
+                List<MODECOMMON.CommonCode> codes = entities.CommonCode.Where(x => x.CodeName.IndexOf("투어마일리지") > -1).OrderBy(x => x.CodeName).ToList().DistinctBy(x => x.CodeName).ToList();
+                // MODECOMMON.CommonCode code1 = entities.CommonCode.Single(author => author.CodeName.StartsWith("test"));
+                
+                foreach (MODECOMMON.CommonCode code in codes)
+                {
+                    this.logString += code.CodeName + "\r\n";
+                }
+            }
+            catch(Exception ex)
+            {
+                string msg = ex.Message;
+            }
+        }
 
         this.mainPage = (MainPage)App.Current.MainPage;
         this.mainPage.ConnectionChanged += MainPage_ConnectionChanged;
