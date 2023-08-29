@@ -1,6 +1,8 @@
 ﻿@page "/counter"
 @using MauiBlazorApp.Services;
 @using Microsoft.Data.SqlClient;
+@using System.Net.Sockets;
+@using System.Text;
 
 <h1>Connection Counter</h1>
 
@@ -37,7 +39,7 @@
             {
                 List<MODECOMMON.CommonCode> codes = entities.CommonCode.Where(x => x.CodeName.IndexOf("투어마일리지") > -1).OrderBy(x => x.CodeName).ToList().DistinctBy(x => x.CodeName).ToList();
                 // MODECOMMON.CommonCode code1 = entities.CommonCode.Single(author => author.CodeName.StartsWith("test"));
-                
+
                 foreach (MODECOMMON.CommonCode code in codes)
                 {
                     this.logString += code.CodeName + "\r\n";
@@ -63,9 +65,17 @@
         InvokeAsync(StateHasChanged);
     }
 
-    private void ServerListenerModule_DataReceived(object sender, EventArgs e)
+    private void ServerListenerModule_DataReceived(object sender, SocketAsyncEventArgs e)
     {
-        logString += sender.ToString() + "\r\n";
+        if (sender != null)
+        {
+            Socket clientSocket = (Socket)sender;
+
+            byte[] szData = e.Buffer;
+            string sData = Encoding.UTF8.GetString(szData).Replace("\0", "");
+
+            logString += sData + "\r\n";
+        }
 
         InvokeAsync(StateHasChanged);
     }

@@ -10,7 +10,7 @@ namespace MauiBlazorApp.Services
     public interface INotification
     {
         public event EventHandler ConnectionDisconnected;
-        public event EventHandler DataReceived;
+        public event EventHandler<SocketAsyncEventArgs> DataReceived;
 
         public void Subscribe(EventHandler evt);
 

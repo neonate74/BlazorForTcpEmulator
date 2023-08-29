@@ -19,7 +19,31 @@ public class ServerListener : INotification
     private EventHandler eventHandler;
 
     public event EventHandler ConnectionDisconnected;
-    public event EventHandler DataReceived;
+    public event EventHandler<SocketAsyncEventArgs> DataReceived;
+
+    public ServerListener()
+    {
+        this.DataReceived += ServerListener_DataReceived;
+    }
+
+    private void ServerListener_DataReceived(object sender, SocketAsyncEventArgs e)
+    {
+        if (sender != null)
+        {
+            Socket clientSocket = (Socket)sender;
+
+            byte[] szData = e.Buffer;
+            string sData = Encoding.UTF8.GetString(szData).Replace("\0", "");
+
+            switch (sData)
+            {
+                case "RequestDisconnect":
+                    this.SendData(clientSocket, "DisconnectOK");
+                    this.DisConnectTcpClientSocket(clientSocket);
+                    break;
+            }
+        }
+    }
 
     public List<Socket> ClientSocketList
     {
@@ -112,15 +136,13 @@ public class ServerListener : INotification
             {
                 if (e.BytesTransferred > 0)
                 {
-                    byte[] szData = e.Buffer;
-                    string sData = Encoding.UTF8.GetString(szData).Replace("\0", "");
-
                     if (DataReceived != null)
                     {
-                        DataReceived.BeginInvoke(sData, new EventArgs(), CallbackDataReceivedInvoke, new DataReceivedSocket(clientSocket, sData));
+                        DataReceived.Invoke(clientSocket, e);
                     }
 
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
+                    byte[] szData = e.Buffer;
                     for (int i = 0; i < szData.Length; i++)
                         szData[i] = 0;
 
@@ -137,22 +159,6 @@ public class ServerListener : INotification
         catch (Exception ex)
         {
             Console.WriteLine(ex.ToString());
-        }
-    }
-
-    private void CallbackDataReceivedInvoke(IAsyncResult sender)
-    {
-        if (sender != null)
-        {
-            DataReceivedSocket socket = (DataReceivedSocket)sender.AsyncState;
-
-            switch (socket.ReceivedData)
-            {
-                case "RequestDisconnect":
-                    this.DisConnectTcpClientSocket(socket.ClientSocket);
-                    this.SendData(socket.ClientSocket, "DisconnectOK");
-                    break;
-            }
         }
     }
 
@@ -180,5 +186,5 @@ public class ServerListener : INotification
 
         m_ClientSocket[lastIndex].SendAsync(data, SocketFlags.None);
     }
-}
 
+}

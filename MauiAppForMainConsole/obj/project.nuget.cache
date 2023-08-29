@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jykKpOXyquk5daRm/JzUla52pzdu0w+jJD0Fp2qHbnf79orgzauJmzoZgBkbJsGEj9Q4NxWNTAOIDrib09MsSg==",
+  "dgSpecHash": "+ObxILmr7TvyLndGNNQhXt/QmavVsDT2XNQ3RJQm1WBybKQPxB8aaHo24XgJ7Bbb09D05X+T+gpZ0wttRhjLbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\monk74\\source\\repos\\BlazorForTcpEmulator\\MauiAppForMainConsole\\MauiAppForMainConsole.csproj",
   "expectedPackageFiles": [
@@ -126,6 +126,7 @@
     "C:\\Users\\monk74\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.7.20.1\\xamarin.kotlin.stdlib.jdk8.1.7.20.1.nupkg.sha512",
     "C:\\Users\\monk74\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.4.1\\xamarin.kotlinx.coroutines.android.1.6.4.1.nupkg.sha512",
     "C:\\Users\\monk74\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.4.1\\xamarin.kotlinx.coroutines.core.jvm.1.6.4.1.nupkg.sha512",
+    "C:\\Users\\monk74\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.10\\microsoft.netcore.app.crossgen2.win-x64.7.0.10.nupkg.sha512",
     "C:\\Users\\monk74\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.29\\microsoft.windows.sdk.net.ref.10.0.19041.29.nupkg.sha512",
     "C:\\Users\\monk74\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.10\\microsoft.aspnetcore.app.runtime.win-x64.7.0.10.nupkg.sha512",
     "C:\\Users\\monk74\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.10\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.10.nupkg.sha512",

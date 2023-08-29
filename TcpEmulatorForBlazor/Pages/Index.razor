@@ -23,18 +23,6 @@
     {
         if (TcpEmulatorForBlazor.Program.TcpConnector != null)
         {
-            try
-            {
-                TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection -= tcpConnector_ConnectionConnected;
-                TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection -= tcpConnector_DisConnectedConnection;
-                TcpEmulatorForBlazor.Program.TcpConnector.DataReceived -= tcpConnector_DataReceived;
-            }
-            catch { }
-
-            TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection += tcpConnector_ConnectionConnected;
-            TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection += tcpConnector_DisConnectedConnection;
-            TcpEmulatorForBlazor.Program.TcpConnector.DataReceived += tcpConnector_DataReceived;
-
             this.DisplayTcpConnectorStatus();
         }
     }
@@ -43,10 +31,22 @@
     {
         if (this.BtnConnectString == "Connect")
         {
+            TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection += tcpConnector_ConnectionConnected;
+            TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection += tcpConnector_DisConnectedConnection;
+            TcpEmulatorForBlazor.Program.TcpConnector.DataReceived += tcpConnector_DataReceived;
+
             TcpEmulatorForBlazor.Program.TcpConnector.DoConnect();
         }
         else
         {
+            try
+            {
+                TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection -= tcpConnector_ConnectionConnected;
+                TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection -= tcpConnector_DisConnectedConnection;
+                TcpEmulatorForBlazor.Program.TcpConnector.DataReceived -= tcpConnector_DataReceived;
+            }
+            catch { }
+
             TcpEmulatorForBlazor.Program.TcpConnector.DoDisconnect();
         }
     }
