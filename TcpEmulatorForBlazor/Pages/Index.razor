@@ -23,7 +23,7 @@
     {
         if (TcpEmulatorForBlazor.Program.TcpConnector != null)
         {
-            this.DisplayTcpConnectorStatus();
+            this.DisplayTcpConnectorStatus(TcpEmulatorForBlazor.Program.TcpConnector.IsConnected);
         }
     }
 
@@ -39,14 +39,6 @@
         }
         else
         {
-            try
-            {
-                TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection -= tcpConnector_ConnectionConnected;
-                TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection -= tcpConnector_DisConnectedConnection;
-                TcpEmulatorForBlazor.Program.TcpConnector.DataReceived -= tcpConnector_DataReceived;
-            }
-            catch { }
-
             TcpEmulatorForBlazor.Program.TcpConnector.DoDisconnect();
         }
     }
@@ -57,17 +49,25 @@
         {
             this.receivedString = TcpEmulatorForBlazor.Program.TcpConnector.ReceivedDataString;
 
+            if (this.receivedString == "DisconnectOK")
+            {
+                try
+                {
+                    TcpEmulatorForBlazor.Program.TcpConnector.ConnectedConnection -= tcpConnector_ConnectionConnected;
+                    TcpEmulatorForBlazor.Program.TcpConnector.DisConnectedConnection -= tcpConnector_DisConnectedConnection;
+                    TcpEmulatorForBlazor.Program.TcpConnector.DataReceived -= tcpConnector_DataReceived;
+                }
+                catch { }
+
+                DisplayTcpConnectorStatus(false);
+            }
+
             InvokeAsync(StateHasChanged);
         }
     }
 
-    private void DisplayTcpConnectorStatus(bool IsConnected = false)
+    private void DisplayTcpConnectorStatus(bool IsConnected)
     {
-        if (TcpEmulatorForBlazor.Program.TcpConnector != null)
-        {
-            IsConnected = TcpEmulatorForBlazor.Program.TcpConnector.IsConnected;
-        }
-
         if (IsConnected)
         {
             this.connectedString = "접속성공";
