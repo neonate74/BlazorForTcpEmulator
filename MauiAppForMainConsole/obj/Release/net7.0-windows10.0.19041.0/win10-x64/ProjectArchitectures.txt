@@ -1,1 +1,0 @@
-C:\Users\kbhan\source\BlazorForTcpEmulator\MauiAppForMainConsole\MauiAppForMainConsole.csproj;x64

@@ -33,23 +33,23 @@
     {
         // string modeCommon = App.GetConfigSectionValue("MODECOMMON_ConnectionString");
 
-        // using (MODECOMMON.MODECOMMONEntities entities = new MODECOMMON.MODECOMMONEntities())
-        // {
-        //     try
-        //     {
-        //         List<MODECOMMON.CommonCode> codes = entities.CommonCode.Where(x => x.CodeName.IndexOf("투어마일리지") > -1).OrderBy(x => x.CodeName).ToList().DistinctBy(x => x.CodeName).ToList();
-        //         // MODECOMMON.CommonCode code1 = entities.CommonCode.Single(author => author.CodeName.StartsWith("test"));
+        using (MODECOMMON.MODECOMMONEntities entities = new MODECOMMON.MODECOMMONEntities())
+        {
+            try
+            {
+                List<MODECOMMON.CommonCode> codes = entities.CommonCode.Where(x => x.CodeName.IndexOf("투어마일리지") > -1).OrderBy(x => x.CodeName).ToList().DistinctBy(x => x.CodeName).ToList();
+                // MODECOMMON.CommonCode code1 = entities.CommonCode.Single(author => author.CodeName.StartsWith("test"));
 
-        //         foreach (MODECOMMON.CommonCode code in codes)
-        //         {
-        //             this.logString += code.CodeName + "\r\n";
-        //         }
-        //     }
-        //     catch(Exception ex)
-        //     {
-        //         string msg = ex.Message;
-        //     }
-        // }
+                foreach (MODECOMMON.CommonCode code in codes)
+                {
+                    this.logString += code.CodeName + "\r\n";
+                }
+            }
+            catch(Exception ex)
+            {
+                string msg = ex.Message;
+            }
+        }
 
         this.mainPage = (MainPage)App.Current.MainPage;
         this.mainPage.ConnectionChanged += MainPage_ConnectionChanged;

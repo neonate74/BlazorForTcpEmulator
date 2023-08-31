@@ -13,8 +13,8 @@ namespace TcpEmulator.Connection
 
         private int MaxSize = 4096;
 
-        private string HOST = "192.168.0.101";
-        //private string HOST = "172.30.152.119";
+        //private string HOST = "192.168.0.101";
+        private string HOST = "172.30.152.119";
 
         private int PORT = 8001;
 
